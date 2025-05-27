@@ -40,3 +40,6 @@ Melina Tokka
 6. Start the application:
       ```bash
    ./mvnw spring-boot:run
+
+7. Access the application:
+    The application will be available at http://localhost:8080
