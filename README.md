@@ -2,7 +2,6 @@
 
 Melina Tokka
 
-Thank you to all contributors for their valuable efforts!
 
 ## Technical Details
 ### Technologies Used
