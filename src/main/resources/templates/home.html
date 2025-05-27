@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Data Visualizer - MYE030 Project</title>
+  <link href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      background: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      color: #333;
+    }
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1rem;
+      color: #666;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 800px;
+    }
+    .row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .form-container {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333;
+    }
+    select {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      background: #fff;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    .choices__inner {
+      padding: 0.6rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #fff;
+      color: #333;
+    }
+    .choices__list--dropdown {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .choices__item--selectable:hover {
+      background: #f0f0f0;
+    }
+    button {
+      width: 100%;
+      background: #5e8b7e;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.75rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #4a7266;
+    }
+    @media (max-width: 768px) {
+      .row {
+        flex-direction: column;
+      }
+      .form-container {
+        min-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+<header style="text-align: center; margin-bottom: 1.5rem;">
+  <h1>Data Visualizer - MYE030 Project</h1>
+  <p>Explore country profiles, football match statistics, and scorer data</p>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="form-container">
+      <form method="post" th:action="@{/country-profile}">
+        <label for="country">Select a Country</label>
+        <select name="country" id="country" required>
+          <option value="" disabled selected>Select a country</option>
+          <option th:each="country : ${countries}" th:value="${country}" th:text="${country}"></option>
+        </select>
+        <button type="submit" aria-label="Show country profile">Show Country Profile</button>
+      </form>
+    </div>
+    <div class="form-container">
+      <form method="post" th:action="@{/year-profile}">
+        <label for="year">Select a Year</label>
+        <select name="year" id="year" required>
+          <option value="" disabled selected>Select a year</option>
+          <option th:each="year : ${years}" th:value="${year}" th:text="${year}"></option>
+        </select>
+        <button type="submit" aria-label="Show year profile">Show Year Profile</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-container">
+      <form method="post" th:action="@{/global-statistics}">
+        <label>Global Statistics</label>
+        <button type="submit" aria-label="Show global statistics" >Show Global Statistics</button>
+      </form>
+    </div>
+    <div class="form-container">
+      <form method="post" th:action="@{/scorer}">
+        <label for="scorer">Select a Scorer</label>
+        <select name="scorer" id="scorer" required>
+          <option value="" disabled selected>Select a scorer</option>
+          <option th:each="scorer : ${scorers}" th:value="${scorer}" th:text="${scorer}"></option>
+        </select>
+        <button type="submit" aria-label="Show scorer profile">Show Scorer Profile</button>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<script>
+
+  document.addEventListener('DOMContentLoaded', () => {
+    new Choices('#country', {
+      searchEnabled: true,
+      searchPlaceholderValue: 'Search countries...',
+      itemSelectText: '',
+      placeholder: true,
+      placeholderValue: 'Select a country'
+    });
+    new Choices('#year', {
+      searchEnabled: true,
+      searchPlaceholderValue: 'Search year...',
+      itemSelectText: '',
+      placeholder: true,
+      placeholderValue: 'Select a year'
+    });
+    new Choices('#scorer', {
+      searchEnabled: true,
+      searchPlaceholderValue: 'Search scorers...',
+      itemSelectText: '',
+      placeholder: true,
+      placeholderValue: 'Select a scorer'
+    });
+  });
+</script>
+</body>
+</html>

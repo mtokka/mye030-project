@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Global Statistics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            background: #f5f5f5;
+            display: block;
+            padding: 1.5rem;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 0 auto 2rem;
+            padding: 0 1rem;
+        }
+
+        h2, h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .card, .chart-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        .chart-card {
+            margin-top: 1.5rem;
+        }
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        th, td {
+            padding: 0.8rem;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: #f5f5f5;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        td:first-child {
+            font-weight: 600;
+            text-align: left;
+            color: #a65b5b;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #5e8b7e;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        a.button:hover {
+            background: #4a7266;
+        }
+
+        .chart-card {
+            min-height: 400px;
+        }
+
+        .chart-card svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 0.5rem;
+            font-size: 0.9rem;
+            pointer-events: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+        }
+
+        .grid line {
+            stroke: #ccc;
+            stroke-dasharray: 3, 3;
+        }
+
+        .grid path {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+
+            .container {
+                width: 100%;
+            }
+
+            h2, h3 {
+                font-size: 1.5rem;
+            }
+
+            .card, .chart-card {
+                padding: 1rem;
+            }
+
+            table, th, td {
+                font-size: 0.9rem;
+                padding: 0.5rem;
+            }
+
+            a.button {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .chart-card {
+                min-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+<h2>Global Statistics</h2>
+
+<div class="container">
+    <div class="card">
+        <h2>Top 10 By Wins</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Wins</th>
+                    <th>Draws</th>
+                    <th>Losses</th>
+                    <th>Total Matches</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:if="${top10ByWins.isEmpty()}">
+                    <td colspan="5" style="text-align: center;">No data found.</td>
+                </tr>
+                <tr th:each="country : ${top10ByWins}">
+                    <td th:text="${country.get('country')}"></td>
+                    <td th:text="${country.get('wins')}"></td>
+                    <td th:text="${country.get('draws')}"></td>
+                    <td th:text="${country.get('losses')}"></td>
+                    <td th:text="${country.get('total_matches')}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="chart-card">
+            <h3>Bar Chart</h3>
+            <div id="chart-wins"></div>
+        </div>
+        <input type="hidden" id="data1" name="data" th:value="${barchart_data1}" />
+    </div>
+</div>
+<div class="container">
+    <div class="card">
+        <h2>Top 10 By Score</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Total Matches</th>
+                    <th>Wins</th>
+                    <th>Draws</th>
+                    <th>Losses</th>
+                    <th>Points</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:if="${top10ByScore.isEmpty()}">
+                    <td colspan="5" style="text-align: center;">No data found.</td>
+                </tr>
+                <tr th:each="country : ${top10ByScore}">
+                    <td th:text="${country.get('country')}"></td>
+                    <td th:text="${country.get('total_matches')}"></td>
+                    <td th:text="${country.get('wins')}"></td>
+                    <td th:text="${country.get('draws')}"></td>
+                    <td th:text="${country.get('losses')}"></td>
+                    <td th:text="${country.get('points')}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="chart-card">
+            <h3>Bar Chart</h3>
+            <div id="chart-score"></div>
+        </div>
+        <input type="hidden" id="data2" name="data" th:value="${barchart_data2}" />
+    </div>
+
+</div>
+<div class="container">
+    <div class="card">
+        <h2>Top 10 By Wins/Years</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Years</th>
+                    <th>Total Matches</th>
+                    <th>Wins</th>
+                    <th>Draws</th>
+                    <th>Losses</th>
+                    <th>Wins/Years</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:if="${top10ByWinsYears.isEmpty()}">
+                    <td colspan="5" style="text-align: center;">No data found.</td>
+                </tr>
+                <tr th:each="country : ${top10ByWinsYears}">
+                    <td th:text="${country.get('country')}"></td>
+                    <td th:text="${country.get('fromYear')} + ' - ' + ${country.get('toYear')}"></td>
+                    <td th:text="${country.get('total_matches')}"></td>
+                    <td th:text="${country.get('wins')}"></td>
+                    <td th:text="${country.get('draws')}"></td>
+                    <td th:text="${country.get('losses')}"></td>
+                    <td th:text="${country.get('winsYears')}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="chart-card">
+            <h3>Bar Chart</h3>
+            <div id="chart-winsYears"></div>
+        </div>
+        <input type="hidden" id="data3" name="data" th:value="${barchart_data3}" />
+    </div>
+</div>
+<div class="container">
+        <div class="card">
+            <h2>Top 10 By Score/Years</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Country</th>
+                        <th>Years</th>
+                        <th>Total Matches</th>
+                        <th>Wins</th>
+                        <th>Draws</th>
+                        <th>Losses</th>
+                        <th>Points</th>
+                        <th>Points/Years</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:if="${top10ByScoreYears.isEmpty()}">
+                        <td colspan="5" style="text-align: center;">No data found.</td>
+                    </tr>
+                    <tr th:each="country : ${top10ByScoreYears}">
+                        <td th:text="${country.get('country')}"></td>
+                        <td th:text="${country.get('fromYear')} + ' - ' + ${country.get('toYear')}"></td>
+                        <td th:text="${country.get('total_matches')}"></td>
+                        <td th:text="${country.get('wins')}"></td>
+                        <td th:text="${country.get('draws')}"></td>
+                        <td th:text="${country.get('losses')}"></td>
+                        <td th:text="${country.get('points')}"></td>
+                        <td th:text="${country.get('pointsYears')}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="chart-card">
+                <h3>Bar Chart</h3>
+                <div id="chart-scoreYears"></div>
+            </div>
+            <input type="hidden" id="data4" name="data" th:value="${barchart_data4}" />
+        </div>
+</div>
+<div class="container">
+    <div class="card">
+        <h2>Wins vs Country Area</h2>
+        <div class="chart-card">
+            <div id="scatter-wins-area"></div>
+        </div>
+        <input type="hidden" id="scatter-data1" name="data" th:value="${scatter_data1}" />
+    </div>
+</div>
+
+<div class="container">
+    <div class="card">
+        <h2>Score vs Population</h2>
+        <div class="chart-card">
+            <div id="scatter-score-population"></div>
+        </div>
+        <input type="hidden" id="scatter-data2" name="data" th:value="${scatter_data2}" />
+    </div>
+</div>
+    <div class="button-group">
+        <a th:href="@{/home}" class="button">Back to Homepage</a>
+    </div>
+<script src="https://d3js.org/d3.v6.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let data = [];
+        try {
+            const rawData = document.getElementById('data1').value;
+            if (rawData && rawData !== 'placeholder') {
+                data = JSON.parse(rawData);
+            }
+            console.log('Chart data:', data);
+        } catch (error) {
+            console.error('Error parsing JSON data:', error);
+        }
+
+        function renderBarChart() {
+            const chartContainer = d3.select('#chart-wins');
+            if (!data || data.length === 0) {
+                chartContainer
+                    .append('text')
+                    .attr('x', 500)
+                    .attr('y', 200)
+                    .attr('text-anchor', 'middle')
+                    .style('font-size', '1rem')
+                    .style('fill', '#333')
+                    .text('No data available to display the chart.');
+                console.warn('No data provided for the chart.');
+                return;
+            }
+
+            const width = Math.min(window.innerWidth * 0.9, 1000);
+            const height = 400;
+            const margin = { top: 50, right: 50, bottom: 100, left: 100 };
+
+            const svg = chartContainer
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height)
+                .attr('viewBox', `0 0 ${width} ${height}`)
+                .style('max-width', '100%');
+
+            const x = d3.scaleBand()
+                .domain(data.map(d => d.country))
+                .range([margin.left, width - margin.right])
+                .padding(0.1);
+
+            const y = d3.scaleLinear()
+                .domain([0, d3.max(data, d => +d.wins) || 1]).nice()
+                .range([height - margin.bottom, margin.top]);
+
+            svg.append('g')
+                .attr('class', 'grid')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x).tickSize(-height + margin.top + margin.bottom).tickFormat(''));
+
+            svg.append('g')
+                .attr('class', 'grid')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y).tickSize(-width + margin.left + margin.right).tickFormat(''));
+
+            svg.append('g')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x))
+                .selectAll('text')
+                .style('font-family', 'Inter, sans-serif')
+                .style('font-size', '0.9rem')
+                .style('fill', '#3a3a3a')
+                .attr('transform', 'rotate(-45)')
+                .style('text-anchor', 'end');
+
+            svg.append('g')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y))
+                .selectAll('text')
+                .style('font-family', 'Inter, sans-serif')
+                .style('font-size', '0.9rem')
+                .style('fill', '#3a3a3a');
+
+            svg.selectAll('.bar')
+                .data(data)
+                .enter()
+                .append('rect')
+                .attr('class', 'bar')
+                .attr('x', d => x(d.country))
+                .attr('y', d => y(+d.wins))
+                .attr('width', x.bandwidth())
+                .attr('height', d => height - margin.bottom - y(+d.wins))
+                .attr('fill', '#a65b5b')
+                .on('mouseover', function(event, d) {
+                    d3.select('body').select('.tooltip')
+                        .html(`${d.country}<br>Wins: ${d.wins}`)
+                        .style('left', `${event.pageX + 15}px`)
+                        .style('top', `${event.pageY - 28}px`)
+                        .style('color', '#333')
+                        .style('border', '1px solid #333')
+                        .style('opacity', 1);
+                })
+                .on('mouseout', () => d3.select('body').select('.tooltip').style('opacity', 0));
+        }
+        function renderScoreChart() {
+            let data2 = [];
+            try {
+                const rawData2 = document.getElementById('data2').value;
+                if (rawData2 && rawData2 !== 'placeholder') {
+                    data2 = JSON.parse(rawData2);
+                }
+            } catch (error) {
+                console.error('Error parsing JSON for score chart:', error);
+            }
+
+            const chartContainer = d3.select('#chart-score');
+            if (!data2 || data2.length === 0) {
+                chartContainer
+                    .append('text')
+                    .attr('x', 500)
+                    .attr('y', 200)
+                    .attr('text-anchor', 'middle')
+                    .style('font-size', '1rem')
+                    .style('fill', '#333')
+                    .text('No data available to display the chart.');
+                return;
+            }
+
+            const width = Math.min(window.innerWidth * 0.9, 1000);
+            const height = 400;
+            const margin = { top: 50, right: 50, bottom: 100, left: 100 };
+
+            const svg = chartContainer
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height)
+                .attr('viewBox', `0 0 ${width} ${height}`)
+                .style('max-width', '100%');
+
+            const x = d3.scaleBand()
+                .domain(data2.map(d => d.country))
+                .range([margin.left, width - margin.right])
+                .padding(0.1);
+
+            const y = d3.scaleLinear()
+                .domain([0, d3.max(data2, d => +d.points) || 1]).nice()
+                .range([height - margin.bottom, margin.top]);
+
+            svg.append('g')
+                .attr('class', 'grid')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x).tickSize(-height + margin.top + margin.bottom).tickFormat(''));
+
+            svg.append('g')
+                .attr('class', 'grid')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y).tickSize(-width + margin.left + margin.right).tickFormat(''));
+
+            svg.append('g')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x))
+                .selectAll('text')
+                .style('font-family', 'Inter, sans-serif')
+                .style('font-size', '0.9rem')
+                .style('fill', '#3a3a3a')
+                .attr('transform', 'rotate(-45)')
+                .style('text-anchor', 'end');
+
+            svg.append('g')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y))
+                .selectAll('text')
+                .style('font-family', 'Inter, sans-serif')
+                .style('font-size', '0.9rem')
+                .style('fill', '#3a3a3a');
+
+            svg.selectAll('.bar')
+                .data(data2)
+                .enter()
+                .append('rect')
+                .attr('class', 'bar')
+                .attr('x', d => x(d.country))
+                .attr('y', d => y(+d.points))
+                .attr('width', x.bandwidth())
+                .attr('height', d => height - margin.bottom - y(+d.points))
+                .attr('fill', '#a65b5b')
+                .on('mouseover', function(event, d) {
+                    d3.select('body').select('.tooltip')
+                        .html(`${d.country}<br>Points: ${d.points}`)
+                        .style('left', `${event.pageX + 15}px`)
+                        .style('top', `${event.pageY - 28}px`)
+                        .style('color', '#333')
+                        .style('border', '1px solid #333')
+                        .style('opacity', 1);
+                })
+                .on('mouseout', () => d3.select('body').select('.tooltip').style('opacity', 0));
+        }
+        function renderWinsYearsChart() {
+            let data3 = [];
+            try {
+                const rawData3 = document.getElementById('data3').value;
+                if (rawData3 && rawData3 !== 'placeholder') {
+                    data3 = JSON.parse(rawData3);
+                }
+            } catch (error) {
+                console.error('Error parsing JSON for score chart:', error);
+            }
+
+            const chartContainer = d3.select('#chart-winsYears');
+            if (!data3 || data3.length === 0) {
+                chartContainer
+                    .append('text')
+                    .attr('x', 500)
+                    .attr('y', 200)
+                    .attr('text-anchor', 'middle')
+                    .style('font-size', '1rem')
+                    .style('fill', '#333')
+                    .text('No data available to display the chart.');
+                return;
+            }
+
+            const width = Math.min(window.innerWidth * 0.9, 1000);
+            const height = 400;
+            const margin = { top: 50, right: 50, bottom: 100, left: 100 };
+
+            const svg = chartContainer
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height)
+                .attr('viewBox', `0 0 ${width} ${height}`)
+                .style('max-width', '100%');
+
+            const x = d3.scaleBand()
+                .domain(data3.map(d => d.country))
+                .range([margin.left, width - margin.right])
+                .padding(0.1);
+
+            const y = d3.scaleLinear()
+                .domain([0, d3.max(data3, d => +d.winsYears) || 1]).nice()
+                .range([height - margin.bottom, margin.top]);
+
+            svg.append('g')
+                .attr('class', 'grid')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x).tickSize(-height + margin.top + margin.bottom).tickFormat(''));
+
+            svg.append('g')
+                .attr('class', 'grid')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y).tickSize(-width + margin.left + margin.right).tickFormat(''));
+
+            svg.append('g')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x))
+                .selectAll('text')
+                .style('font-family', 'Inter, sans-serif')
+                .style('font-size', '0.9rem')
+                .style('fill', '#3a3a3a')
+                .attr('transform', 'rotate(-45)')
+                .style('text-anchor', 'end');
+
+            svg.append('g')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y))
+                .selectAll('text')
+                .style('font-family', 'Inter, sans-serif')
+                .style('font-size', '0.9rem')
+                .style('fill', '#3a3a3a');
+
+            svg.selectAll('.bar')
+                .data(data3)
+                .enter()
+                .append('rect')
+                .attr('class', 'bar')
+                .attr('x', d => x(d.country))
+                .attr('y', d => y(+d.winsYears))
+                .attr('width', x.bandwidth())
+                .attr('height', d => height - margin.bottom - y(+d.winsYears))
+                .attr('fill', '#a65b5b')
+                .on('mouseover', function(event, d) {
+                    d3.select('body').select('.tooltip')
+                        .html(`${d.country}<br>Wins/Years: ${d.winsYears}`)
+                        .style('left', `${event.pageX + 15}px`)
+                        .style('top', `${event.pageY - 28}px`)
+                        .style('color', '#333')
+                        .style('border', '1px solid #333')
+                        .style('opacity', 1);
+                })
+                .on('mouseout', () => d3.select('body').select('.tooltip').style('opacity', 0));
+        }
+        function renderScoreYearsChart() {
+            let data3 = [];
+            try {
+                const rawData3 = document.getElementById('data4').value;
+                if (rawData3 && rawData3 !== 'placeholder') {
+                    data3 = JSON.parse(rawData3);
+                }
+            } catch (error) {
+                console.error('Error parsing JSON for score chart:', error);
+            }
+
+            const chartContainer = d3.select('#chart-scoreYears');
+            if (!data3 || data3.length === 0) {
+                chartContainer
+                    .append('text')
+                    .attr('x', 500)
+                    .attr('y', 200)
+                    .attr('text-anchor', 'middle')
+                    .style('font-size', '1rem')
+                    .style('fill', '#333')
+                    .text('No data available to display the chart.');
+                return;
+            }
+
+            const width = Math.min(window.innerWidth * 0.9, 1000);
+            const height = 400;
+            const margin = { top: 50, right: 50, bottom: 100, left: 100 };
+
+            const svg = chartContainer
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height)
+                .attr('viewBox', `0 0 ${width} ${height}`)
+                .style('max-width', '100%');
+
+            const x = d3.scaleBand()
+                .domain(data3.map(d => d.country))
+                .range([margin.left, width - margin.right])
+                .padding(0.1);
+
+            const y = d3.scaleLinear()
+                .domain([0, d3.max(data3, d => +d.pointsYears) || 1]).nice()
+                .range([height - margin.bottom, margin.top]);
+
+            svg.append('g')
+                .attr('class', 'grid')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x).tickSize(-height + margin.top + margin.bottom).tickFormat(''));
+
+            svg.append('g')
+                .attr('class', 'grid')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y).tickSize(-width + margin.left + margin.right).tickFormat(''));
+
+            svg.append('g')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x))
+                .selectAll('text')
+                .style('font-family', 'Inter, sans-serif')
+                .style('font-size', '0.9rem')
+                .style('fill', '#3a3a3a')
+                .attr('transform', 'rotate(-45)')
+                .style('text-anchor', 'end');
+
+            svg.append('g')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y))
+                .selectAll('text')
+                .style('font-family', 'Inter, sans-serif')
+                .style('font-size', '0.9rem')
+                .style('fill', '#3a3a3a');
+
+            svg.selectAll('.bar')
+                .data(data3)
+                .enter()
+                .append('rect')
+                .attr('class', 'bar')
+                .attr('x', d => x(d.country))
+                .attr('y', d => y(+d.pointsYears))
+                .attr('width', x.bandwidth())
+                .attr('height', d => height - margin.bottom - y(+d.pointsYears))
+                .attr('fill', '#a65b5b')
+                .on('mouseover', function(event, d) {
+                    d3.select('body').select('.tooltip')
+                        .html(`${d.country}<br>Points/Years: ${d.pointsYears}`)
+                        .style('left', `${event.pageX + 15}px`)
+                        .style('top', `${event.pageY - 28}px`)
+                        .style('color', '#333')
+                        .style('border', '1px solid #333')
+                        .style('opacity', 1);
+                })
+                .on('mouseout', () => d3.select('body').select('.tooltip').style('opacity', 0));
+        }
+
+        function renderWinsAreaPlot() {
+            let scatterData = [];
+            try {
+                const rawData = document.getElementById('scatter-data1').value;
+                if (rawData && rawData !== 'placeholder') {
+                    scatterData = JSON.parse(rawData);
+                }
+            } catch (error) {
+                console.error('Error parsing JSON for scatter plot:', error);
+            }
+
+            scatterData = scatterData.filter(d => +d.area >= 0 && +d.wins > 0);
+
+            const container = d3.select('#scatter-wins-area');
+
+            if (!scatterData || scatterData.length === 0) {
+                container.append('text')
+                    .attr('x', 600)
+                    .attr('y', 250)
+                    .attr('text-anchor', 'middle')
+                    .style('font-size', '1.2rem')
+                    .style('fill', '#333')
+                    .text('No data available to display the chart.');
+                return;
+            }
+
+            // Dimensions and margins
+            const width = Math.min(window.innerWidth * 0.95, 1400);
+            const height = 700;
+            const margin = {top: 100, right: 80, bottom: 180, left: 120};
+
+            const svg = container.append('svg')
+                .attr('width', width)
+                .attr('height', height)
+                .attr('viewBox', `0 0 ${width} ${height}`)
+                .style('max-width', '100%');
+
+            const x = d3.scaleLog()
+                .domain([
+                    1,
+                    d3.max(scatterData, d => +d.area) * 1.3
+                ])
+                .range([margin.left, width - margin.right])
+                .nice();
+
+            const y = d3.scaleLinear()
+                .domain([0, d3.max(scatterData, d => +d.wins) * 1.3])
+                .range([height - margin.bottom, margin.top])
+                .nice();
+
+            svg.append('g')
+                .attr('class', 'grid')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x)
+                    .tickSize(-height + margin.top + margin.bottom)
+                    .tickFormat('')
+                    .tickValues([1, 10, 100, 1000, 10000, 100000, 1000000, 10000000]) // Explicit grid ticks
+                );
+
+            svg.append('g')
+                .attr('class', 'grid')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y)
+                    .tickSize(-width + margin.left + margin.right)
+                    .tickFormat('')
+                );
+
+            svg.append('g')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x)
+                    .tickValues([1, 10, 100, 1000, 10000, 100000, 1000000, 10000000]) // Explicitly include 1 and 10
+                    .tickFormat(d => {
+                        const formatted = d3.format("~s")(d);
+                        return formatted.replace('k', 'K').replace('M', 'M');
+                    })
+                    .tickPadding(15)
+                )
+                .selectAll('text')
+                .style('font-family', 'Inter, sans-serif')
+                .style('font-size', '1rem')
+                .style('fill', '#3a3a3a')
+                .attr('transform', 'rotate(-45)')
+                .attr('text-anchor', 'end');
+
+            svg.append('g')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y))
+                .selectAll('text')
+                .style('font-family', 'Inter, sans-serif')
+                .style('font-size', '1.1rem')
+                .style('fill', '#3a3a3a');
+
+
+            svg.append('text')
+                .attr('x', width / 2)
+                .attr('y', height - 40)
+                .style('text-anchor', 'middle')
+                .style('font-family', 'Inter, sans-serif')
+                .style('fill', '#3a3a3a')
+                .style('font-size', '1.2rem')
+                .text('Country Area (km², log scale)');
+
+            svg.append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('x', -height / 2)
+                .attr('y', 40)
+                .style('text-anchor', 'middle')
+                .style('font-family', 'Inter, sans-serif')
+                .style('fill', '#3a3a3a')
+                .style('font-size', '1.2rem')
+                .text('Total Wins');
+
+            svg.selectAll('circle')
+                .data(scatterData)
+                .enter()
+                .append('circle')
+                .attr('cx', d => x(+d.area) + (Math.random() - 0.5) * 20)
+                .attr('cy', d => y(+d.wins) + (Math.random() - 0.5) * 20)
+                .attr('r', 6)
+                .attr('fill', '#a65b5b')
+                .attr('opacity', 0.6)
+                .on('mouseover', function (event, d) {
+                    d3.select(this).attr('r', 10).attr('fill', '#a65b5b');
+                    d3.select('body').select('.tooltip')
+                        .html(`${d.country}<br>Area: ${d3.format(',')(d.area)} km²<br>Wins: ${d.wins}`)
+                        .style('left', `${event.pageX + 15}px`)
+                        .style('top', `${event.pageY - 28}px`)
+                        .style('color', '#333')
+                        .style('border', '1px solid #333')
+                        .style('opacity', 1);
+                })
+                .on('mouseout', function () {
+                    d3.select(this).attr('r', 6).attr('fill', '#a65b5b');
+                    d3.select('body').select('.tooltip').style('opacity', 0);
+                });
+
+            const trendData = scatterData.map(d => ({
+                x: Math.log10(+d.area),
+                y: +d.wins,
+                area: +d.area,
+                wins: +d.wins
+            }));
+
+            const regression = ss.linearRegression(trendData.map(d => [d.x, d.y]));
+            const lineStart = {
+                x: d3.min(scatterData, d => +d.area),
+                y: regression.m * Math.log10(d3.min(scatterData, d => +d.area)) + regression.b
+            };
+            const lineEnd = {
+                x: d3.max(scatterData, d => +d.area),
+                y: regression.m * Math.log10(d3.max(scatterData, d => +d.area)) + regression.b
+            };
+
+            svg.append('line')
+                .attr('x1', x(lineStart.x))
+                .attr('y1', y(lineStart.y))
+                .attr('x2', x(lineEnd.x))
+                .attr('y2', y(lineEnd.y))
+                .attr('stroke', '#a65b5b')
+                .attr('stroke-width', 2)
+                .attr('stroke-dasharray', '5,5');
+        }
+        function renderScorePopulationPlot() {
+            let scatterData = [];
+            try {
+                const rawData = document.getElementById('scatter-data2').value;
+                if (rawData && rawData !== 'placeholder') {
+                    scatterData = JSON.parse(rawData);
+                }
+            } catch (error) {
+                console.error('Error parsing JSON for scatter plot:', error);
+            }
+
+            scatterData = scatterData.filter(d => +d.population >= 0 && +d.points > 0);
+
+            const container = d3.select('#scatter-score-population');
+
+            if (!scatterData || scatterData.length === 0) {
+                container.append('text')
+                    .attr('x', 600)
+                    .attr('y', 250)
+                    .attr('text-anchor', 'middle')
+                    .style('font-size', '1.2rem')
+                    .style('fill', '#333')
+                    .text('No data available to display the chart.');
+                return;
+            }
+
+            const width = Math.min(window.innerWidth * 0.95, 1400);
+            const height = 700;
+            const margin = { top: 100, right: 80, bottom: 180, left: 120 };
+
+            const svg = container.append('svg')
+                .attr('width', width)
+                .attr('height', height)
+                .attr('viewBox', `0 0 ${width} ${height}`)
+                .style('max-width', '100%');
+
+            // Logarithmic scale for population (x-axis)
+            const x = d3.scaleLog()
+                .domain([
+                    100, // Start at 1 for population
+                    d3.max(scatterData, d => +d.population) * 1.3
+                ])
+                .range([margin.left, width - margin.right])
+                .nice();
+
+            // Linear scale for points (y-axis)
+            const y = d3.scaleLinear()
+                .domain([0, d3.max(scatterData, d => +d.points) * 1.3])
+                .range([height - margin.bottom, margin.top])
+                .nice();
+
+            svg.append('g')
+                .attr('class', 'grid')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x)
+                    .tickSize(-height + margin.top + margin.bottom)
+                    .tickFormat('')
+                    .tickValues([ 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000]) // Extended for population
+                );
+
+            svg.append('g')
+                .attr('class', 'grid')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y)
+                    .tickSize(-width + margin.left + margin.right)
+                    .tickFormat('')
+                );
+
+            svg.append('g')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x)
+                    .tickValues([ 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000]) // Adjusted for population
+                    .tickFormat(d => {
+                        const formatted = d3.format("~s")(d);
+                        return formatted.replace('k', 'K').replace('M', 'M').replace('G', 'B'); // Use B for billions
+                    })
+                    .tickPadding(15)
+                )
+                .selectAll('text')
+                .style('font-family', 'Inter, sans-serif')
+                .style('font-size', '1rem')
+                .style('fill', '#3a3a3a')
+                .attr('transform', 'rotate(-45)')
+                .attr('text-anchor', 'end');
+
+            svg.append('g')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y))
+                .selectAll('text')
+                .style('font-family', 'Inter, sans-serif')
+                .style('font-size', '1.1rem')
+                .style('fill', '#3a3a3a');
+
+            svg.append('text')
+                .attr('x', width / 2)
+                .attr('y', height - 40)
+                .style('text-anchor', 'middle')
+                .style('font-family', 'Inter, sans-serif')
+                .style('fill', '#3a3a3a')
+                .style('font-size', '1.2rem')
+                .text('Population (log scale)'); // Updated label
+
+            svg.append('text')
+                .attr('transform', 'rotate(-90)')
+                .attr('x', -height / 2)
+                .attr('y', 40)
+                .style('text-anchor', 'middle')
+                .style('font-family', 'Inter, sans-serif')
+                .style('fill', '#3a3a3a')
+                .style('font-size', '1.2rem')
+                .text('Points'); // Updated label
+
+            svg.selectAll('circle')
+                .data(scatterData)
+                .enter()
+                .append('circle')
+                .attr('cx', d => x(+d.population) + (Math.random() - 0.5) * 20)
+                .attr('cy', d => y(+d.points) + (Math.random() - 0.5) * 20)
+                .attr('r', 6)
+                .attr('fill', '#a65b5b') // Consistent teal color
+                .attr('opacity', 0.6)
+                .on('mouseover', function(event, d) {
+                    d3.select(this).attr('r', 10).attr('fill', '#a65b5b');
+                    d3.select('body').select('.tooltip')
+                        .html(`${d.country}<br>Population: ${d3.format(',')(d.population)}<br>Points: ${d.points}`)
+                        .style('left', `${event.pageX + 15}px`)
+                        .style('top', `${event.pageY - 28}px`)
+                        .style('color', '#333')
+                        .style('border', '1px solid #333')
+                        .style('opacity', 1);
+                })
+                .on('mouseout', function() {
+                    d3.select(this).attr('r', 6).attr('fill', '#a65b5b');
+                    d3.select('body').select('.tooltip').style('opacity', 0);
+                });
+
+            const trendData = scatterData.map(d => ({
+                x: Math.log10(+d.population),
+                y: +d.points,
+                population: +d.population,
+                points: +d.points
+            }));
+
+            const regression = ss.linearRegression(trendData.map(d => [d.x, d.y]));
+            const lineStart = { x: d3.min(scatterData, d => +d.population), y: regression.m * Math.log10(d3.min(scatterData, d => +d.population)) + regression.b };
+            const lineEnd = { x: d3.max(scatterData, d => +d.population), y: regression.m * Math.log10(d3.max(scatterData, d => +d.population)) + regression.b };
+
+            svg.append('line')
+                .attr('x1', x(lineStart.x))
+                .attr('y1', y(lineStart.y))
+                .attr('x2', x(lineEnd.x))
+                .attr('y2', y(lineEnd.y))
+                .attr('stroke', '#4a7e75')
+                .attr('stroke-width', 2)
+                .attr('stroke-dasharray', '5,5');
+        }
+
+        d3.select('body')
+            .append('div')
+            .attr('class', 'tooltip')
+            .style('position', 'absolute')
+            .style('background', 'rgba(255, 255, 255, 0.95)')
+            .style('border-radius', '8px')
+            .style('padding', '0.5rem')
+            .style('font-size', '0.9rem')
+            .style('pointer-events', 'none')
+            .style('box-shadow', '0 4px 10px rgba(0, 0, 0, 0.1)')
+            .style('opacity', 0);
+
+        try {
+            renderBarChart();
+        } catch (error) {
+            console.error('Error rendering chart:', error);
+            d3.select('#chart-wins')
+                .append('text')
+                .attr('x', 500)
+                .attr('y', 200)
+                .attr('text-anchor', 'middle')
+                .style('font-size', '1rem')
+                .style('fill', '#333')
+                .text('Error rendering chart. Check console for details.');
+        }
+        try {
+            renderScoreChart();
+        } catch (error) {
+            console.error('Error rendering chart:', error);
+            d3.select('#chart-score')
+                .append('text')
+                .attr('x', 500)
+                .attr('y', 200)
+                .attr('text-anchor', 'middle')
+                .style('font-size', '1rem')
+                .style('fill', '#333')
+                .text('Error rendering chart. Check console for details.');
+        }
+        try {
+            renderWinsYearsChart();
+        } catch (error) {
+            console.error('Error rendering chart:', error);
+            d3.select('#chart-winsYears')
+                .append('text')
+                .attr('x', 500)
+                .attr('y', 200)
+                .attr('text-anchor', 'middle')
+                .style('font-size', '1rem')
+                .style('fill', '#333')
+                .text('Error rendering chart. Check console for details.');
+        }
+        try {
+            renderScoreYearsChart();
+        } catch (error) {
+            console.error('Error rendering chart:', error);
+            d3.select('#chart-scoreYears')
+                .append('text')
+                .attr('x', 500)
+                .attr('y', 200)
+                .attr('text-anchor', 'middle')
+                .style('font-size', '1rem')
+                .style('fill', '#333')
+                .text('Error rendering chart. Check console for details.');
+        }
+        try {
+            renderWinsAreaPlot();
+        } catch (error) {
+            console.error('Error rendering chart:', error);
+            d3.select('#chart-wins-area')
+                .append('text')
+                .attr('x', 500)
+                .attr('y', 200)
+                .attr('text-anchor', 'middle')
+                .style('font-size', '1rem')
+                .style('fill', '#333')
+                .text('Error rendering chart. Check console for details.');
+        }
+        try {
+            renderScorePopulationPlot();
+        } catch (error) {
+            console.error('Error rendering chart:', error);
+            d3.select('#scatter-points-population')
+                .append('text')
+                .attr('x', 500)
+                .attr('y', 200)
+                .attr('text-anchor', 'middle')
+                .style('font-size', '1rem')
+                .style('fill', '#333')
+                .text('Error rendering chart. Check console for details.');
+        }
+
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="${countryName} + ' Matches'">Country Matches</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            padding: 1.5rem;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            color: #333;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        p, h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        strong {
+            font-weight: 600;
+            color: #a65b5b;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        th, td {
+            padding: 0.8rem;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: #f5f5f5;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        td:first-child {
+            font-weight: 600;
+            text-align: left;
+            color: #a65b5b;
+        }
+
+
+
+        button {
+            background: #a65b5b;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #8b4b4b;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #5e8b7e;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        a.button:hover {
+            background: #4a7266;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+
+            .container {
+                width: 100%;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .card {
+                padding: 1rem;
+            }
+
+            table, th, td {
+                font-size: 0.9rem;
+                padding: 0.5rem;
+            }
+
+
+            button, a.button {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 th:text="${countryName} + ' Matches'">Country Matches</h2>
+    <div class="card">
+        <p><strong>Years:</strong> <span th:text="${fromYear}"></span> – <span th:text="${toYear}"></span></p>
+        <h4 th:text="'Total Matches: ' + ${matches.size()}"></h4>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Home Team</th>
+                    <th>Away Team</th>
+                    <th>Score</th>
+                    <th>Winner</th>
+                    <th>Tournament</th>
+                    <th>City</th>
+                    <th>Neutral</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr th:if="${matches.isEmpty()}">
+                    <td colspan="8" style="text-align: center;">No matches found for the selected range.</td>
+                </tr>
+                <tr th:each="match: ${matches}">
+                    <td th:text="${match.get('date')}"></td>
+                    <td th:text="${match.get('home_team_name')}"></td>
+                    <td th:text="${match.get('away_team_name')}"></td>
+                    <td th:text="${match.get('home_score')} + ' - ' + ${match.get('away_score')}"></td>
+                    <td th:text="${match.get('winner')}"></td>
+                    <td th:text="${match.get('tournament')}"></td>
+                    <td th:text="${match.get('city')}"></td>
+                    <td th:text="${match.get('neutral')}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="button-group">
+        <a th:href="@{/country-profile(country=${countryName}, fromYear=${fromYear}, toYear=${toYear})}" class="button">Back to Profile</a>
+        <a th:href="@{/home}" class="button">Back to Homepage</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="${year} + ' Profile'">Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            padding: 1.5rem;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        p, h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        strong {
+            font-weight: 600;
+            color: #a65b5b;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        th, td {
+            padding: 0.8rem;
+            text-align: center;
+            vertical-align: middle;
+            border-bottom: 1px solid #eee;
+        }
+
+        td:first-child {
+            font-weight: 600;
+            text-align: left;
+            color: #a65b5b;
+        }
+
+        th {
+            background: #f5f5f5;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        button {
+            background: #a65b5b;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #8b4b4b;
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #5e8b7e;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .back-link:hover {
+            background: #4a7266;
+        }
+
+        .chart-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .chart-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .chart-container svg {
+            width: 100%;
+            height: auto;
+        }
+
+        .grid line {
+            stroke: #e0e0e0;
+            stroke-opacity: 0.3;
+            stroke-dasharray: none;
+        }
+
+        .grid path {
+            stroke-width: 0;
+        }
+
+        .tooltip {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 0.5rem;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            pointer-events: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .error-message {
+            text-align: center;
+            color: #a65b5b;
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+
+        .filter-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-form select {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+            color: #333;
+            width: 200px;
+        }
+
+        .filter-form select:focus {
+            outline: none;
+            border-color: #a65b5b;
+        }
+
+        .filter-form button {
+            align-self: flex-start;
+        }
+
+        .debug-info {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #333;
+            display: none; /* Hidden by default, shown via JS */
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            table, th, td {
+                font-size: 0.9rem;
+                padding: 0.5rem;
+            }
+
+            .filter-form {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1rem;
+            }
+
+            .filter-form select {
+                width: 100%;
+            }
+
+            button, .back-link {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .chart-card {
+                padding: 1rem;
+            }
+
+            .chart-title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 th:text="${year} + ' Profile'">Profile</h2>
+
+    <!-- Debug information -->
+    <div class="debug-info" id="debug-info">
+        <p><strong>Debug Info:</strong></p>
+        <p>Year: <span th:text="${year}"></span></p>
+        <p>Total Matches: <span th:text="${totalMatches}"></span></p>
+        <p>Draws: <span th:text="${draws}"></span></p>
+        <p>Penalties: <span th:text="${penalties}"></span></p>
+        <p>Total Matches By Country Size: <span th:text="${totalMatchesByCountry?.size()}"></span></p>
+        <p>Data JSON: <span th:text="${data}"></span></p>
+    </div>
+
+    <!-- Error message -->
+    <div th:if="${totalMatchesByCountry == null or totalMatchesByCountry.isEmpty()}" class="error-message">No data available for this year.</div>
+
+    <div class="card">
+        <h4>Overall Statistics</h4>
+        <p th:if="${year}"><strong>Year:</strong> <span th:text="${year}"></span></p>
+        <p th:if="${totalMatches != null}"><strong>Total Matches:</strong> <span th:text="${totalMatches}"></span></p>
+        <p th:if="${draws != null}"><strong>Draws:</strong> <span th:text="${draws}"></span></p>
+        <p th:if="${penalties != null}"><strong>Matches with Penalties:</strong> <span th:text="${penalties}"></span></p>
+        <p th:if="${totalMatches == null and draws == null and penalties == null}" class="error-message">No statistics available for this year.</p>
+    </div>
+
+    <div class="chart-card">
+        <h3 class="chart-title">Matches Statistics by Country in <span th:text="${year}"></span></h3>
+        <div id="barchart-all-matches" class="chart-container"></div>
+    </div>
+
+    <input type="hidden" id="data" name="data" value="placeholder" th:value="${data}" />
+
+    <div class="card">
+        <h2>Countries</h2>
+        <form id="filter-form" class="filter-form">
+            <select id="filter-country">
+                <option value="">All Countries</option>
+            </select>
+            <select id="filter-region">
+                <option value="">All Regions</option>
+            </select>
+            <select id="filter-subregion">
+                <option value="">All Sub-Regions</option>
+            </select>
+            <select id="filter-status">
+                <option value="">All Statuses</option>
+            </select>
+            <select id="filter-developed">
+                <option value="">All Development Statuses</option>
+            </select>
+            <button type="submit">Apply Filters</button>
+        </form>
+        <div class="table-responsive">
+            <table id="country-stats-table">
+                <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Total Matches</th>
+                    <th>Wins</th>
+                    <th>Draws</th>
+                    <th>Losses</th>
+                    <th>Penalties</th>
+                    <th>Region</th>
+                    <th>Sub-Region</th>
+                    <th>Status</th>
+                    <th>Developed / Developing</th>
+                </tr>
+                </thead>
+                <tbody id="country-stats-tbody">
+                <tr th:if="${totalMatchesByCountry == null or totalMatchesByCountry.isEmpty()}">
+                    <td colspan="10" style="text-align: center;">No data found.</td>
+                </tr>
+                <tr th:each="country : ${totalMatchesByCountry}">
+                    <td th:text="${country.get('country')}"></td>
+                    <td th:text="${country.get('total_matches')}"></td>
+                    <td th:text="${country.get('wins')}"></td>
+                    <td th:text="${country.get('draws')}"></td>
+                    <td th:text="${country.get('losses')}"></td>
+                    <td th:text="${country.get('penalties') ?: 0}"></td>
+                    <td th:text="${country.get('region') == '-1' ? 'Unknown' : country.get('region')}"></td>
+                    <td th:text="${country.get('subRegion') == '-1' ? 'Unknown' : country.get('subRegion')}"></td>
+                    <td th:text="${country.get('status') == '-1' ? 'Unknown' : country.get('status')}"></td>
+                    <td th:text="${country.get('developedOrDeveloping') == '-1' ? 'Unknown' : country.get('developedOrDeveloping')}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <a th:href="@{/home}" class="back-link">Back</a>
+</div>
+
+<script src="https://d3js.org/d3.v6.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        let originalData = [];
+        try {
+            const rawData = document.getElementById('data').value;
+            console.log('Raw data from input:', rawData);
+            if (rawData && rawData !== 'placeholder') {
+                originalData = JSON.parse(rawData);
+            }
+            console.log('Parsed original data:', originalData);
+        } catch (error) {
+            console.error('Error parsing JSON data:', error);
+            originalData = [];
+        }
+
+        // Check for debug parameter in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const isDebug = urlParams.get('debug') === 'true';
+        if (isDebug) {
+            document.getElementById('debug-info').style.display = 'block';
+        }
+
+        const filterForm = document.getElementById('filter-form');
+        const tableBody = document.getElementById('country-stats-tbody');
+        const chartContainer = d3.select('#barchart-all-matches');
+
+        // Populate dropdowns with distinct values
+        function populateDropdowns(data) {
+            const dropdowns = [
+                { id: 'filter-country', field: 'country' },
+                { id: 'filter-region', field: 'region' },
+                { id: 'filter-subregion', field: 'subRegion' },
+                { id: 'filter-status', field: 'status' },
+                { id: 'filter-developed', field: 'developedOrDeveloping' }
+            ];
+
+            dropdowns.forEach(({ id, field }) => {
+                const select = document.getElementById(id);
+                // Extract distinct values, excluding null and '-1'
+                const values = [...new Set(data
+                    .map(item => item[field])
+                    .filter(value => value != null && value !== '-1')
+                )].sort(); // Sort alphabetically
+                console.log(`Distinct ${field} values:`, values);
+
+                // Add options
+                values.forEach(value => {
+                    const option = document.createElement('option');
+                    option.value = value;
+                    option.textContent = value;
+                    select.appendChild(option);
+                });
+            });
+        }
+
+        // Initialize dropdowns
+        if (originalData.length) {
+            populateDropdowns(originalData);
+        } else {
+            console.warn('No data to populate dropdowns');
+        }
+
+        function applyFilters() {
+            const countryFilter = document.getElementById('filter-country').value;
+            const regionFilter = document.getElementById('filter-region').value;
+            const subRegionFilter = document.getElementById('filter-subregion').value;
+            const statusFilter = document.getElementById('filter-status').value;
+            const developedFilter = document.getElementById('filter-developed').value;
+
+            console.log('Applying filters:', { countryFilter, regionFilter, subRegionFilter, statusFilter, developedFilter });
+
+            let filteredData = originalData.filter(d => {
+                return (!countryFilter || d.country === countryFilter) &&
+                    (!regionFilter || d.region === regionFilter || (regionFilter === 'Unknown' && d.region === '-1')) &&
+                    (!subRegionFilter || d.subRegion === subRegionFilter || (subRegionFilter === 'Unknown' && d.subRegion === '-1')) &&
+                    (!statusFilter || d.status === statusFilter || (statusFilter === 'Unknown' && d.status === '-1')) &&
+                    (!developedFilter || d.developedOrDeveloping === developedFilter || (developedFilter === 'Unknown' && d.developedOrDeveloping === '-1'));
+            });
+
+            console.log('Filtered data:', filteredData);
+
+            // Update table
+            tableBody.innerHTML = '';
+            if (!filteredData.length) {
+                tableBody.innerHTML = '<tr><td colspan="10" style="text-align: center;">No data found.</td></tr>';
+            } else {
+                filteredData.forEach(d => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${d.country || ''}</td>
+                        <td>${d.total_matches || 0}</td>
+                        <td>${d.wins || 0}</td>
+                        <td>${d.draws || 0}</td>
+                        <td>${d.losses || 0}</td>
+                        <td>${d.penalties || 0}</td>
+                        <td>${d.region === '-1' ? 'Unknown' : d.region || ''}</td>
+                        <td>${d.subRegion === '-1' ? 'Unknown' : d.subRegion || ''}</td>
+                        <td>${d.status === '-1' ? 'Unknown' : d.status || ''}</td>
+                        <td>${d.developedOrDeveloping === '-1' ? 'Unknown' : d.developedOrDeveloping || ''}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+
+            // Update chart
+            renderBarChart(filteredData.filter(d => d.total_matches != null && d.total_matches > 0));
+        }
+
+        filterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            applyFilters();
+        });
+
+        // Apply filters on select change for instant updates
+        ['filter-country', 'filter-region', 'filter-subregion', 'filter-status', 'filter-developed'].forEach(id => {
+            document.getElementById(id).addEventListener('change', applyFilters);
+        });
+
+        function renderBarChart(data) {
+            chartContainer.selectAll('*').remove(); // Clear previous chart
+
+            if (!data || !data.length) {
+                showNoData(chartContainer);
+                return;
+            }
+
+            const width = Math.min(window.innerWidth * 0.9, 1200);
+            const height = Math.min(data.length * 30 + 150, 2000);
+            const margin = { top: 50, right: 50, bottom: 50, left: 250 };
+
+            const svg = chartContainer
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height)
+                .attr('viewBox', `0 0 ${width} ${height}`)
+                .style('max-width', '100%');
+
+            svg.append('defs')
+                .append('clipPath')
+                .attr('id', 'chart-clip')
+                .append('rect')
+                .attr('x', margin.left)
+                .attr('y', margin.top)
+                .attr('width', width - margin.left - margin.right)
+                .attr('height', height - margin.top - margin.bottom);
+
+            const stack = d3.stack()
+                .keys(["wins", "draws", "losses", "penalties"])
+                .order(d3.stackOrderNone)
+                .offset(d3.stackOffsetNone);
+
+            const stackedData = stack(data);
+
+            const maxTotal = d3.max(data, d => (d.wins || 0) + (d.draws || 0) + (d.losses || 0) + (d.penalties || 0));
+
+            const color = d3.scaleOrdinal()
+                .domain(["wins", "draws", "losses", "penalties"])
+                .range(["#5e8b7e", "#ffb74d", "#a65b5b", "#5b7fa6"]);
+
+            const x = d3.scaleLinear()
+                .domain([0, maxTotal])
+                .range([margin.left, width - margin.right])
+                .nice();
+
+            const y = d3.scaleBand()
+                .domain(data.map(d => d.country))
+                .range([margin.top, height - margin.bottom])
+                .padding(0.2);
+
+            svg.append('g')
+                .attr('class', 'grid')
+                .attr('transform', `translate(0,${margin.top})`)
+                .attr('clip-path', 'url(#chart-clip)')
+                .call(d3.axisLeft(y)
+                    .tickSizeOuter(0)
+                    .tickSizeInner(-(width - margin.left - margin.right))
+                    .tickFormat(''));
+
+            svg.append('g')
+                .attr('class', 'grid')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .attr('clip-path', 'url(#chart-clip)')
+                .call(d3.axisBottom(x)
+                    .tickSizeOuter(0)
+                    .tickSizeInner(-(height - margin.top - margin.bottom))
+                    .tickFormat(''));
+
+            svg.append('g')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x))
+                .selectAll('text')
+                .style('font-family', 'Inter, sans-serif')
+                .style('font-size', '0.9rem')
+                .style('fill', '#333');
+
+            svg.append('g')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y))
+                .selectAll('text')
+                .style('font-family', 'Inter, sans-serif')
+                .style('font-size', '0.8rem')
+                .style('fill', '#333');
+
+            svg.append('g')
+                .attr('clip-path', 'url(#chart-clip)')
+                .selectAll('g')
+                .data(stackedData)
+                .enter()
+                .append('g')
+                .attr('fill', d => color(d.key))
+                .selectAll('rect')
+                .data(d => d)
+                .enter()
+                .append('rect')
+                .attr('y', d => y(d.data.country))
+                .attr('x', d => x(d[0]))
+                .attr('width', d => x(d[1]) - x(d[0]))
+                .attr('height', y.bandwidth())
+                .attr('rx', 2)
+                .attr('ry', 2)
+                .on('mouseover', function (event, d) {
+                    const category = d3.select(this.parentNode).datum().key;
+                    const value = d[1] - d[0];
+                    const country = d.data.country;
+
+                    d3.select(this).attr('opacity', 0.8);
+
+                    d3.select('.tooltip')
+                        .html(`${country}<br>${capitalizeFirstLetter(category)}: ${value}`)
+                        .style('left', `${event.pageX + 15}px`)
+                        .style('top', `${event.pageY - 28}px`)
+                        .style('opacity', 1);
+                })
+                .on('mouseout', function () {
+                    d3.select(this).attr('opacity', 1);
+                    d3.select('.tooltip').style('opacity', 0);
+                });
+
+            const legend = svg.append('g')
+                .attr('transform', `translate(${width - margin.right - 300}, ${margin.top - 30})`);
+
+            const legendItems = ["wins", "draws", "losses", "penalties"];
+
+            legend.selectAll('rect')
+                .data(legendItems)
+                .enter()
+                .append('rect')
+                .attr('x', (d, i) => i * 80)
+                .attr('y', 0)
+                .attr('width', 15)
+                .attr('height', 15)
+                .attr('fill', d => color(d));
+
+            legend.selectAll('text')
+                .data(legendItems)
+                .enter()
+                .append('text')
+                .attr('x', (d, i) => i * 80 + 20)
+                .attr('y', 12)
+                .text(d => capitalizeFirstLetter(d))
+                .style('font-family', 'Inter, sans-serif')
+                .style('font-size', '0.8rem')
+                .style('fill', '#333');
+        }
+
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
+        function showNoData(container) {
+            container.append('text')
+                .attr('x', 600)
+                .attr('y', 300)
+                .attr('text-anchor', 'middle')
+                .style('font-size', '1rem')
+                .style('fill', '#333')
+                .text('No data available to display the chart.');
+        }
+
+        d3.select('body')
+            .append('div')
+            .attr('class', 'tooltip')
+            .style('position', 'absolute')
+            .style('background', 'rgba(255, 255, 255, 0.95)')
+            .style('border-radius', '8px')
+            .style('padding', '0.5rem')
+            .style('font-size', '0.9rem')
+            .style('pointer-events', 'none')
+            .style('box-shadow', '0 4px 10px rgba(0, 0, 0, 0.1)')
+            .style('opacity', 0);
+
+        // Initial render
+        try {
+            applyFilters();
+        } catch (error) {
+            console.error('Error rendering initial data:', error);
+            tableBody.innerHTML = '<tr><td colspan="10" style="text-align: center;">Error rendering data. Check console.</td></tr>';
+            showNoData(chartContainer);
+        }
+    });
+</script>
+</body>
+</html>

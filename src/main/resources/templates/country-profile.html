@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title th:text="${countryName} + ' Profile'">Country Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      padding: 1.5rem;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-align: center;
+      color: #333;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    p, h4 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    strong {
+      font-weight: 600;
+      color: #a65b5b;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    th, td {
+      padding: 0.8rem;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+
+
+    td:first-child {
+      font-weight: 600;
+      text-align: left;
+      color: #a65b5b;
+    }
+    th {
+      background: #f5f5f5;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    td:first-child {
+      font-weight: 600;
+      text-align: left;
+      color: #a65b5b;
+    }
+
+    .filter-form {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .filter-form label {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    select {
+      width: 220px;
+      padding: 0.9rem;
+      font-size: 1.15rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fff;
+      cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    select:focus {
+      border-color: #a65b5b;
+      box-shadow: 0 0 8px rgba(166, 91, 91, 0.3);
+      outline: none;
+    }
+
+    .choices__inner {
+      width: 160px;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fff;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .choices__inner:hover {
+      border-color: #a65b5b;
+      box-shadow: 0 0 8px rgba(166, 91, 91, 0.2);
+    }
+
+    .choices__list--single {
+      padding: 0;
+    }
+
+    .choices__list--dropdown {
+      width: 160px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-top: 4px;
+      max-height: 200px;
+      overflow-y: auto;
+      transition: opacity 0.2s, transform 0.2s;
+      transform-origin: top;
+      transform: scaleY(0.95);
+    }
+
+    .choices__list--dropdown.is-active {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+
+    .choices__item--selectable {
+      padding: 0.5rem 0.8rem;
+      font-size: 1rem;
+      color: #333;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .choices__item--selectable:hover {
+      background: #f5f5f5;
+      color: #a65b5b;
+    }
+
+    .choices__input {
+      font-size: 1.15rem;
+      color: #333;
+      background: transparent;
+      border: none;
+    }
+
+    button {
+      background: #a65b5b;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #8b4b4b;
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: #5e8b7e;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .back-link:hover {
+      background: #4a7266;
+    }
+
+    #warningMessage {
+      color: #a65b5b;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      display: none;
+    }
+
+    .chart-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .chart-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 0.8rem;
+    }
+
+    #chart-wins svg, #chart-losses svg, #chart-draws svg {
+      width: 100%;
+      height: auto;
+    }
+
+    .line {
+      transition: stroke-width 0.2s;
+    }
+
+    .tooltip {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 8px;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+      pointer-events: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .grid line {
+      stroke: #ccc;
+      stroke-dasharray: 3, 3;
+    }
+
+    .grid path {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      table, th, td {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+      }
+
+      .filter-form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+      }
+
+      select, .choices__inner, .choices__list--dropdown {
+        width: 100%;
+        padding: 0.7rem;
+        font-size: 1rem;
+      }
+
+      .choices__item--selectable {
+        padding: 0.6rem 0.8rem;
+        font-size: 1.2rem;
+      }
+
+      button, .back-link {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+      }
+
+      .chart-card {
+        padding: 1rem;
+      }
+
+      .chart-title {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2 th:text="${countryName} + ' Profile'">Country Profile</h2>
+  <div class="card">
+    <p><strong>Years:</strong> <span th:text="${fromYear}"></span> – <span th:text="${toYear}"></span></p>
+    <h4 th:text="'Total Matches: ' + ${totalMatches}"></h4>
+    <div class="table-responsive">
+      <table>
+        <thead>
+        <tr>
+          <th></th>
+          <th>Matches</th>
+          <th>Wins</th>
+          <th>Losses</th>
+          <th>Draws</th>
+          <th>Shootouts Wins</th>
+          <th>Shootouts Losses</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Home</td>
+          <td th:text="${homeMatches ?: 0}">0</td>
+          <td th:text="${homeWins ?: 0}">0</td>
+          <td th:text="${homeLosses ?: 0}">0</td>
+          <td th:text="${homeDraws ?: 0}">0</td>
+          <td th:text="${homeShootoutsWins ?: 0}">0</td>
+          <td th:text="${homeShootoutsLosses ?: 0}">0</td>
+        </tr>
+        <tr>
+          <td>Away</td>
+          <td th:text="${awayMatches ?: 0}">0</td>
+          <td th:text="${awayWins ?: 0}">0</td>
+          <td th:text="${awayLosses ?: 0}">0</td>
+          <td th:text="${awayDraws ?: 0}">0</td>
+          <td th:text="${awayShootoutsWins ?: 0}">0</td>
+          <td th:text="${awayShootoutsLosses ?: 0}">0</td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td th:text="${totalMatches ?: 0}">0</td>
+          <td th:text="${totalWins ?: 0}">0</td>
+          <td th:text="${totalLosses ?: 0}">0</td>
+          <td th:text="${totalDraws ?: 0}">0</td>
+          <td th:text="${totalShootoutsWins ?: 0}">0</td>
+          <td th:text="${totalShootoutsLosses ?: 0}">0</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <p><small>* Matches that ended in a draw are counted under "Draws". "Shootouts Wins" and "Shootouts Losses" reflect only the outcome of the penalty shootouts.</small></p>
+  </div>
+
+  <div class="card">
+    <form id="filterForm" method="get" th:action="@{/country-filter}" class="filter-form">
+      <input type="hidden" name="country" th:value="${countryName}" />
+      <div>
+        <label for="startYear"><strong>From:</strong></label>
+        <select id="startYear" name="startYear" required>
+          <option value="" disabled th:selected="${startYear == null}">Year</option>
+          <option th:each="year : ${#numbers.sequence(fromYear, toYear)}"
+                  th:value="${year}"
+                  th:text="${year}"
+                  th:selected="${year == startYear}"></option>
+        </select>
+      </div>
+      <div>
+        <label for="endYear"><strong>To:</strong></label>
+        <select id="endYear" name="endYear" required>
+          <option value="" disabled th:selected="${endYear == null}">Year</option>
+          <option th:each="year : ${#numbers.sequence(fromYear, toYear)}"
+                  th:value="${year}"
+                  th:text="${year}"
+                  th:selected="${year == endYear}"></option>
+        </select>
+      </div>
+      <button type="submit">Filter</button>
+    </form>
+    <p id="warningMessage">From Year cannot be greater than To Year.</p>
+  </div>
+
+  <div class="chart-card">
+    <h3 class="chart-title">Wins</h3>
+    <div id="chart-wins"></div>
+  </div>
+  <div class="chart-card">
+    <h3 class="chart-title">Losses</h3>
+    <div id="chart-losses"></div>
+  </div>
+  <div class="chart-card">
+    <h3 class="chart-title">Draws</h3>
+    <div id="chart-draws"></div>
+  </div>
+
+  <input type="hidden" id="data" name="data" value="placeholder" th:value="${data}" />
+  <a th:href="@{/home}" class="back-link">Back</a>
+</div>
+
+<script src="https://d3js.org/d3.v6.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    new Choices('#startYear', {
+      searchEnabled: true,
+      searchPlaceholderValue: 'Search year...',
+      itemSelectText: '',
+      placeholder: true,
+      placeholderValue: 'Select year'
+    });
+
+    new Choices('#endYear', {
+      searchEnabled: true,
+      searchPlaceholderValue: 'Search year...',
+      itemSelectText: '',
+      placeholder: true,
+      placeholderValue: 'Select year'
+    });
+
+    const rawData = document.getElementById("data").value;
+    const width = Math.min(window.innerWidth * 0.9, 1200);
+    const height = 400;
+    const margin = { top: 50, right: 50, bottom: 60, left: 60 };
+
+    // Check if data is missing or invalid
+    if (!rawData || rawData === "placeholder") {
+      const chartIds = ["#chart-wins", "#chart-losses", "#chart-draws"];
+      chartIds.forEach(chartId => {
+        d3.select(chartId).append("text")
+                .attr("x", width / 2)
+                .attr("y", height / 2)
+                .attr("text-anchor", "middle")
+                .style("font-size", "1rem")
+                .style("fill", "#333")
+                .text("No data available to display the chart.");
+      });
+      return;
+    }
+
+    let data;
+    try {
+      data = JSON.parse(rawData);
+      console.log("Parsed data:", data);
+    } catch (e) {
+      console.error("Error parsing data:", e);
+      const chartIds = ["#chart-wins", "#chart-losses", "#chart-draws"];
+      chartIds.forEach(chartId => {
+        d3.select(chartId).append("text")
+                .attr("x", width / 2)
+                .attr("y", height / 2)
+                .attr("text-anchor", "middle")
+                .style("font-size", "1rem")
+                .style("fill", "#333")
+                .text("Error loading data for the chart.");
+      });
+      return;
+    }
+
+    if (!data || data.length === 0) {
+      const chartIds = ["#chart-wins", "#chart-losses", "#chart-draws"];
+      chartIds.forEach(chartId => {
+        d3.select(chartId).append("text")
+                .attr("x", width / 2)
+                .attr("y", height / 2)
+                .attr("text-anchor", "middle")
+                .style("font-size", "1rem")
+                .style("fill", "#333")
+                .text("No data available to display the chart.");
+      });
+      return;
+    }
+
+    // Prepare data for charts
+    const minYear = d3.min(data, d => d.year);
+    const maxYear = d3.max(data, d => d.year);
+    const allYears = Array.from({ length: Math.max(2, maxYear - minYear + 1) }, (_, i) => minYear + i);
+    const dataMap = new Map(data.map(d => [d.year, d]));
+    data = allYears.map(year => ({
+      year,
+      wins: dataMap.get(year)?.wins || 0,
+      losses: dataMap.get(year)?.losses || 0,
+      draw: dataMap.get(year)?.draw || 0
+    }));
+
+    // Chart configurations
+    const charts = [
+      { id: "#chart-wins", key: "wins", color: "#a65b5b", label: "Wins" },
+      { id: "#chart-losses", key: "losses", color: "#5e8b7e", label: "Losses" },
+      { id: "#chart-draws", key: "draw", color: "#e8d3a3", label: "Draws" }
+    ];
+
+    // Create tooltip
+    const tooltip = d3.select("body")
+            .append("div")
+            .attr("class", "tooltip")
+            .style("position", "absolute")
+            .style("background", "rgba(255, 255, 255, 0.95)")
+            .style("border-radius", "8px")
+            .style("padding", "0.5rem")
+            .style("font-size", "0.9rem")
+            .style("pointer-events", "none")
+            .style("box-shadow", "0 4px 10px rgba(0, 0, 0, 0.1)")
+            .style("opacity", 0)
+            .style("z-index", "1000");
+
+    charts.forEach(chart => {
+      const svg = d3.select(chart.id)
+              .append("svg")
+              .attr("width", width)
+              .attr("height", height)
+              .attr("viewBox", `0 0 ${width} ${height}`)
+              .style("max-width", "100%");
+
+      // Set x-axis
+      const x = d3.scaleLinear()
+              .domain([minYear - 0.5, maxYear + 0.5])
+              .range([margin.left, width - margin.right]);
+
+      // Set y-axis
+      const y = d3.scaleLinear()
+              .domain([0, Math.max(1, d3.max(data, d => d[chart.key]))])
+              .nice()
+              .range([height - margin.bottom, margin.top]);
+
+      // Add grid lines for x-axis
+      svg.append("g")
+              .attr("class", "grid")
+              .attr("transform", `translate(0,${height - margin.bottom})`)
+              .call(d3.axisBottom(x).tickSize(-height + margin.top + margin.bottom).tickFormat(""));
+
+      // Add grid lines for y-axis
+      svg.append("g")
+              .attr("class", "grid")
+              .attr("transform", `translate(${margin.left},0)`)
+              .call(d3.axisLeft(y).tickSize(-width + margin.left + margin.right).tickFormat(""));
+
+      // Add x-axis
+      svg.append("g")
+              .attr("transform", `translate(0,${height - margin.bottom})`)
+              .call(d3.axisBottom(x).tickFormat(d3.format("d")))
+              .selectAll("text")
+              .style("font-family", "Roboto Mono, monospace")
+              .style("font-size", "0.9rem")
+              .style("fill", "#3a3a3a");
+
+      // Add y-axis
+      svg.append("g")
+              .attr("transform", `translate(${margin.left},0)`)
+              .call(d3.axisLeft(y))
+              .selectAll("text")
+              .style("font-family", "Roboto Mono, monospace")
+              .style("font-size", "0.9rem")
+              .style("fill", "#3a3a3a");
+
+      // Draw line
+      svg.append("path")
+              .datum(data)
+              .attr("fill", "none")
+              .attr("stroke", chart.color)
+              .attr("stroke-width", 2.5)
+              .attr("data-key", chart.key)
+              .attr("d", d3.line()
+                      .x(d => x(d.year))
+                      .y(d => y(d[chart.key]))
+                      .curve(d3.curveMonotoneX));
+
+      // Add dots
+      svg.selectAll(`.dot-${chart.key}`)
+              .data(data)
+              .enter()
+              .append("circle")
+              .attr("class", `dot-${chart.key}`)
+              .attr("cx", d => x(d.year))
+              .attr("cy", d => y(d[chart.key]))
+              .attr("r", 5)
+              .attr("fill", chart.color)
+              .style("pointer-events", "all")
+              .on("mouseover", function(event, d) {
+                tooltip
+                        .html(`Year: ${d.year}<br>${chart.label}: ${d[chart.key]}`)
+                        .style("left", `${event.pageX + 15}px`)
+                        .style("top", `${event.pageY - 28}px`)
+                        .style("color", "#333")
+                        .style("border", `1px solid "#333"`)
+                        .style("opacity", 1);
+              })
+              .on("mousemove", function(event, d) {
+                tooltip
+                        .style("left", `${event.pageX + 15}px`)
+                        .style("top", `${event.pageY - 28}px`);
+              })
+              .on("mouseout", () => tooltip.style("opacity", 0));
+    });
+  });
+</script>
+</body>
+</html>

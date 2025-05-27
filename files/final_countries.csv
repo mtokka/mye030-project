@@ -1,0 +1,365 @@
+ISO,ISO3,ISO_Code,FIPS,Display_Name,Official_Name,Capital,Continent,CurrencyCode,CurrencyName,Phone,Region Code,Region Name,Sub-region Code,Sub-region Name,Intermediate Region Code,Intermediate Region Name,Status,Developed or Developing,Area_SqKm,Population,id
+AF,AFG,4.0,AF,Afghanistan,Afghanistan,Kabul,Asia,AFN,Afghani,93,142.0,Asia,34.0,Southern Asia,-1.0,-1,Independent,Developing,647500.0,29121286.0,1
+AX,ALA,248.0,-1,Aland Islands,Åland Islands,Mariehamn,Europe,EUR,Euro,340,150.0,Europe,154.0,Northern Europe,-1.0,-1,Part of FI,Developed,1580.0,26711.0,2
+AL,ALB,8.0,AL,Albania,Albania,Tirana,Europe,ALL,Lek,355,150.0,Europe,39.0,Southern Europe,-1.0,-1,Independent,Developed,28748.0,2986952.0,3
+DZ,DZA,12.0,AG,Algeria,Algeria,Algiers,Africa,DZD,Dinar,213,2.0,Africa,15.0,Northern Africa,-1.0,-1,Independent,Developing,2381740.0,34586184.0,4
+AS,ASM,16.0,AQ,American Samoa,American Samoa,Pago Pago,Oceania,USD,Dollar,-683,9.0,Oceania,61.0,Polynesia,-1.0,-1,Territory of US,Developing,199.0,57881.0,5
+AD,AND,20.0,AN,Andorra,Andorra,Andorra la Vella,Europe,EUR,Euro,376,150.0,Europe,39.0,Southern Europe,-1.0,-1,Independent,Developed,468.0,84000.0,6
+AO,AGO,24.0,AO,Angola,Angola,Luanda,Africa,AOA,Kwanza,244,2.0,Africa,202.0,Sub-Saharan Africa,17.0,Middle Africa,Independent,Developing,1246700.0,13068161.0,7
+AI,AIA,660.0,AV,Anguilla,Anguilla,The Valley,North America,XCD,Dollar,-263,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Territory of GB,Developing,102.0,13254.0,8
+AQ,ATA,10.0,AY,Antarctica,Antarctica,-1,Antarctica,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,International,-1,14000000.0,0.0,9
+AG,ATG,28.0,AC,Antigua and Barbuda,Antigua and Barbuda,St. John's,North America,XCD,Dollar,-267,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Independent,Developing,443.0,86754.0,10
+AR,ARG,32.0,AR,Argentina,Argentina,Buenos Aires,South America,ARS,Peso,54,19.0,Americas,419.0,Latin America and the Caribbean,5.0,South America,Independent,Developing,2766890.0,41343201.0,11
+AM,ARM,51.0,AM,Armenia,Armenia,Yerevan,Asia,AMD,Dram,374,142.0,Asia,145.0,Western Asia,-1.0,-1,Independent,Developing,29800.0,2968000.0,12
+AW,ABW,533.0,AA,Aruba,Aruba,Oranjestad,North America,AWG,Guilder,297,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Part of NL,Developing,193.0,71566.0,13
+AU,AUS,36.0,AS,Australia,Australia,Canberra,Oceania,AUD,Dollar,61,9.0,Oceania,53.0,Australia and New Zealand,-1.0,-1,Independent,Developed,7686850.0,21515754.0,14
+AT,AUT,40.0,AU,Austria,Austria,Vienna,Europe,EUR,Euro,43,150.0,Europe,155.0,Western Europe,-1.0,-1,Independent,Developed,83858.0,8205000.0,15
+AZ,AZE,31.0,AJ,Azerbaijan,Azerbaijan,Baku,Asia,AZN,Manat,994,142.0,Asia,145.0,Western Asia,-1.0,-1,Independent,Developing,86600.0,8303512.0,16
+BS,BHS,44.0,BF,Bahamas,Bahamas,Nassau,North America,BSD,Dollar,-241,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Independent,Developing,13940.0,301790.0,17
+BH,BHR,48.0,BA,Bahrain,Bahrain,Manama,Asia,BHD,Dinar,973,142.0,Asia,145.0,Western Asia,-1.0,-1,Independent,Developing,665.0,738004.0,18
+BD,BGD,50.0,BG,Bangladesh,Bangladesh,Dhaka,Asia,BDT,Taka,880,142.0,Asia,34.0,Southern Asia,-1.0,-1,Independent,Developing,144000.0,156118464.0,19
+BB,BRB,52.0,BB,Barbados,Barbados,Bridgetown,North America,BBD,Dollar,-245,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Independent,Developing,431.0,285653.0,20
+BY,BLR,112.0,BO,Belarus,Belarus,Minsk,Europe,BYN,Belarusian ruble,375,150.0,Europe,151.0,Eastern Europe,-1.0,-1,Independent,Developed,207600.0,9685000.0,21
+BE,BEL,56.0,BE,Belgium,Belgium,Brussels,Europe,EUR,Euro,32,150.0,Europe,155.0,Western Europe,-1.0,-1,Independent,Developed,30510.0,10403000.0,22
+BZ,BLZ,84.0,BH,Belize,Belize,Belmopan,North America,BZD,Dollar,501,19.0,Americas,419.0,Latin America and the Caribbean,13.0,Central America,Independent,Developing,22966.0,314522.0,23
+BJ,BEN,204.0,BN,Benin,Benin,Porto-Novo,Africa,XOF,Franc,229,2.0,Africa,202.0,Sub-Saharan Africa,11.0,Western Africa,Independent,Developing,112620.0,9056010.0,24
+BM,BMU,60.0,BD,Bermuda,Bermuda,Hamilton,North America,BMD,Dollar,-440,19.0,Americas,21.0,Northern America,-1.0,-1,Territory of GB,Developed,53.0,65365.0,25
+BT,BTN,64.0,BT,Bhutan,Bhutan,Thimphu,Asia,BTN,Ngultrum,975,142.0,Asia,34.0,Southern Asia,-1.0,-1,Independent,Developing,47000.0,699847.0,26
+BO,BOL,68.0,BL,Bolivia,Bolivia (Plurinational State of),Sucre,South America,BOB,Boliviano,591,19.0,Americas,419.0,Latin America and the Caribbean,5.0,South America,Independent,Developing,1098580.0,9947418.0,27
+BQ,BES,535.0,-1,"Bonaire, Saint Eustatius and Saba ","Bonaire, Sint Eustatius and Saba",-1,North America,USD,Dollar,599,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Part of NL,Developing,328.0,18012.0,28
+BA,BIH,70.0,BK,Bosnia and Herzegovina,Bosnia and Herzegovina,Sarajevo,Europe,BAM,Marka,387,150.0,Europe,39.0,Southern Europe,-1.0,-1,Independent,Developed,51129.0,4590000.0,29
+BW,BWA,72.0,BC,Botswana,Botswana,Gaborone,Africa,BWP,Pula,267,2.0,Africa,202.0,Sub-Saharan Africa,18.0,Southern Africa,Independent,Developing,600370.0,2029307.0,30
+BV,BVT,74.0,BV,Bouvet Island,Bouvet Island,-1,Antarctica,NOK,Krone,-1,19.0,Americas,419.0,Latin America and the Caribbean,5.0,South America,Territory of NO,Developing,49.0,0.0,31
+BR,BRA,76.0,BR,Brazil,Brazil,Brasilia,South America,BRL,Real,55,19.0,Americas,419.0,Latin America and the Caribbean,5.0,South America,Independent,Developing,8511965.0,201103330.0,32
+IO,IOT,86.0,IO,British Indian Ocean Territory,British Indian Ocean Territory,Diego Garcia,Asia,USD,Dollar,246,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Territory of GB,Developing,60.0,4000.0,33
+VG,VGB,92.0,VI,British Virgin Islands,British Virgin Islands,Road Town,North America,USD,Dollar,-283,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Territory of GB,Developing,153.0,21730.0,34
+BN,BRN,96.0,BX,Brunei,Brunei Darussalam,Bandar Seri Begawan,Asia,BND,Dollar,673,142.0,Asia,35.0,South-eastern Asia,-1.0,-1,Independent,Developing,5770.0,395027.0,35
+BG,BGR,100.0,BU,Bulgaria,Bulgaria,Sofia,Europe,BGN,Lev,359,150.0,Europe,151.0,Eastern Europe,-1.0,-1,Independent,Developed,110910.0,7148785.0,36
+BF,BFA,854.0,UV,Burkina Faso,Burkina Faso,Ouagadougou,Africa,XOF,Franc,226,2.0,Africa,202.0,Sub-Saharan Africa,11.0,Western Africa,Independent,Developing,274200.0,16241811.0,37
+BI,BDI,108.0,BY,Burundi,Burundi,Bujumbura,Africa,BIF,Franc,257,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Independent,Developing,27830.0,9863117.0,38
+KH,KHM,116.0,CB,Cambodia,Cambodia,Phnom Penh,Asia,KHR,Riels,855,142.0,Asia,35.0,South-eastern Asia,-1.0,-1,Independent,Developing,181040.0,14453680.0,39
+CM,CMR,120.0,CM,Cameroon,Cameroon,Yaounde,Africa,XAF,Franc,237,2.0,Africa,202.0,Sub-Saharan Africa,17.0,Middle Africa,Independent,Developing,475440.0,19294149.0,40
+CA,CAN,124.0,CA,Canada,Canada,Ottawa,North America,CAD,Dollar,1,19.0,Americas,21.0,Northern America,-1.0,-1,Independent,Developed,9984670.0,33679000.0,41
+CV,CPV,132.0,CV,Cape Verde,Cabo Verde,Praia,Africa,CVE,Escudo,238,2.0,Africa,202.0,Sub-Saharan Africa,11.0,Western Africa,Independent,Developing,4033.0,508659.0,42
+KY,CYM,136.0,CJ,Cayman Islands,Cayman Islands,George Town,North America,KYD,Dollar,-344,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Territory of GB,Developing,262.0,44270.0,43
+CF,CAF,140.0,CT,Central African Republic,Central African Republic,Bangui,Africa,XAF,Franc,236,2.0,Africa,202.0,Sub-Saharan Africa,17.0,Middle Africa,Independent,Developing,622984.0,4844927.0,44
+TD,TCD,148.0,CD,Chad,Chad,N'Djamena,Africa,XAF,Franc,235,2.0,Africa,202.0,Sub-Saharan Africa,17.0,Middle Africa,Independent,Developing,1284000.0,10543464.0,45
+CL,CHL,152.0,CI,Chile,Chile,Santiago,South America,CLP,Peso,56,19.0,Americas,419.0,Latin America and the Caribbean,5.0,South America,Independent,Developing,756950.0,16746491.0,46
+CN,CHN,156.0,CH,China,China,Beijing,Asia,CNY,Yuan Renminbi,86,142.0,Asia,30.0,Eastern Asia,-1.0,-1,Independent,Developing,9596960.0,1330044000.0,47
+CX,CXR,162.0,KT,Christmas Island,Christmas Island,Flying Fish Cove,Oceania,AUD,Dollar,61,9.0,Oceania,53.0,Australia and New Zealand,-1.0,-1,Territory of AU,Developed,135.0,1500.0,48
+CC,CCK,166.0,CK,Cocos Islands,Cocos (Keeling) Islands,West Island,Asia,AUD,Dollar,61,9.0,Oceania,53.0,Australia and New Zealand,-1.0,-1,Territory of AU,Developed,14.0,628.0,49
+CO,COL,170.0,CO,Colombia,Colombia,Bogota,South America,COP,Peso,57,19.0,Americas,419.0,Latin America and the Caribbean,5.0,South America,Independent,Developing,1138910.0,47790000.0,50
+KM,COM,174.0,CN,Comoros,Comoros,Moroni,Africa,KMF,Franc,269,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Independent,Developing,2170.0,773407.0,51
+CK,COK,184.0,CW,Cook Islands,Cook Islands,Avarua,Oceania,NZD,Dollar,682,9.0,Oceania,61.0,Polynesia,-1.0,-1,Associated with NZ,Developing,240.0,21388.0,52
+CR,CRI,188.0,CS,Costa Rica,Costa Rica,San Jose,North America,CRC,Colon,506,19.0,Americas,419.0,Latin America and the Caribbean,13.0,Central America,Independent,Developing,51100.0,4516220.0,53
+HR,HRV,191.0,HR,Croatia,Croatia,Zagreb,Europe,HRK,Kuna,385,150.0,Europe,39.0,Southern Europe,-1.0,-1,Independent,Developed,56542.0,4284889.0,54
+CU,CUB,192.0,CU,Cuba,Cuba,Havana,North America,CUP,Peso,53,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Independent,Developing,110860.0,11423000.0,55
+CW,CUW,531.0,UC,Curacao,Curaçao, Willemstad,North America,ANG,Guilder,599,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Part of NL,Developing,444.0,141766.0,56
+CY,CYP,196.0,CY,Cyprus,Cyprus,Nicosia,Europe,EUR,Euro,357,142.0,Asia,145.0,Western Asia,-1.0,-1,Independent,Developed,9250.0,1102677.0,57
+CZ,CZE,203.0,EZ,Czechia,Czechia,Prague,Europe,CZK,Koruna,420,150.0,Europe,151.0,Eastern Europe,-1.0,-1,Independent,Developed,78866.0,10476000.0,58
+CD,COD,180.0,CG,Democratic Republic of the Congo,Democratic Republic of the Congo,Kinshasa,Africa,CDF,Franc,243,2.0,Africa,202.0,Sub-Saharan Africa,17.0,Middle Africa,Independent,Developing,2345410.0,70916439.0,59
+DK,DNK,208.0,DA,Denmark,Denmark,Copenhagen,Europe,DKK,Krone,45,150.0,Europe,154.0,Northern Europe,-1.0,-1,Independent,Developed,43094.0,5484000.0,60
+DJ,DJI,262.0,DJ,Djibouti,Djibouti,Djibouti,Africa,DJF,Franc,253,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Independent,Developing,23000.0,740528.0,61
+DM,DMA,212.0,DO,Dominica,Dominica,Roseau,North America,XCD,Dollar,-766,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Independent,Developing,754.0,72813.0,62
+DO,DOM,214.0,DR,Dominican Republic,Dominican Republic,Santo Domingo,North America,DOP,Peso,+1-809 and 1-829,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Independent,Developing,48730.0,9823821.0,63
+EC,ECU,218.0,EC,Ecuador,Ecuador,Quito,South America,USD,Dollar,593,19.0,Americas,419.0,Latin America and the Caribbean,5.0,South America,Independent,Developing,283560.0,14790608.0,64
+EG,EGY,818.0,EG,Egypt,Egypt,Cairo,Africa,EGP,Pound,20,2.0,Africa,15.0,Northern Africa,-1.0,-1,Independent,Developing,1001450.0,80471869.0,65
+SV,SLV,222.0,ES,El Salvador,El Salvador,San Salvador,North America,USD,Dollar,503,19.0,Americas,419.0,Latin America and the Caribbean,13.0,Central America,Independent,Developing,21040.0,6052064.0,66
+GQ,GNQ,226.0,EK,Equatorial Guinea,Equatorial Guinea,Malabo,Africa,XAF,Franc,240,2.0,Africa,202.0,Sub-Saharan Africa,17.0,Middle Africa,Independent,Developing,28051.0,1014999.0,67
+ER,ERI,232.0,ER,Eritrea,Eritrea,Asmara,Africa,ERN,Nakfa,291,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Independent,Developing,121320.0,5792984.0,68
+EE,EST,233.0,EN,Estonia,Estonia,Tallinn,Europe,EUR,Euro,372,150.0,Europe,154.0,Northern Europe,-1.0,-1,Independent,Developed,45226.0,1291170.0,69
+ET,ETH,231.0,ET,Ethiopia,Ethiopia,Addis Ababa,Africa,ETB,Birr,251,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Independent,Developing,1127127.0,88013491.0,70
+FK,FLK,238.0,FK,Falkland Islands,Falkland Islands (Malvinas),Stanley,South America,FKP,Pound,500,19.0,Americas,419.0,Latin America and the Caribbean,5.0,South America,Territory of GB,Developing,12173.0,2638.0,71
+FO,FRO,234.0,FO,Faroe Islands,Faroe Islands,Torshavn,Europe,DKK,Krone,298,150.0,Europe,154.0,Northern Europe,-1.0,-1,Part of DK,Developed,1399.0,48228.0,72
+FJ,FJI,242.0,FJ,Fiji,Fiji,Suva,Oceania,FJD,Dollar,679,9.0,Oceania,54.0,Melanesia,-1.0,-1,Independent,Developing,18270.0,875983.0,73
+FI,FIN,246.0,FI,Finland,Finland,Helsinki,Europe,EUR,Euro,358,150.0,Europe,154.0,Northern Europe,-1.0,-1,Independent,Developed,337030.0,5244000.0,74
+FR,FRA,250.0,FR,France,France,Paris,Europe,EUR,Euro,33,150.0,Europe,155.0,Western Europe,-1.0,-1,Independent,Developed,547030.0,64768389.0,75
+GF,GUF,254.0,FG,French Guiana,French Guiana,Cayenne,South America,EUR,Euro,594,19.0,Americas,419.0,Latin America and the Caribbean,5.0,South America,Part of FR,Developing,91000.0,195506.0,76
+PF,PYF,258.0,FP,French Polynesia,French Polynesia,Papeete,Oceania,XPF,Franc,689,9.0,Oceania,61.0,Polynesia,-1.0,-1,Territory of FR,Developing,4167.0,270485.0,77
+TF,ATF,260.0,FS,French Southern Territories,French Southern Territories,Port-aux-Francais,Antarctica,EUR,Euro  ,-1,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Territory of FR,Developing,7829.0,140.0,78
+GA,GAB,266.0,GB,Gabon,Gabon,Libreville,Africa,XAF,Franc,241,2.0,Africa,202.0,Sub-Saharan Africa,17.0,Middle Africa,Independent,Developing,267667.0,1545255.0,79
+GM,GMB,270.0,GA,Gambia,Gambia,Banjul,Africa,GMD,Dalasi,220,2.0,Africa,202.0,Sub-Saharan Africa,11.0,Western Africa,Independent,Developing,11300.0,1593256.0,80
+GE,GEO,268.0,GG,Georgia,Georgia,Tbilisi,Asia,GEL,Lari,995,142.0,Asia,145.0,Western Asia,-1.0,-1,Independent,Developing,69700.0,4630000.0,81
+DE,DEU,276.0,GM,Germany,Germany,Berlin,Europe,EUR,Euro,49,150.0,Europe,155.0,Western Europe,-1.0,-1,Independent,Developed,357021.0,81802257.0,82
+GH,GHA,288.0,GH,Ghana,Ghana,Accra,Africa,GHS,Cedi,233,2.0,Africa,202.0,Sub-Saharan Africa,11.0,Western Africa,Independent,Developing,239460.0,24339838.0,83
+GI,GIB,292.0,GI,Gibraltar,Gibraltar,Gibraltar,Europe,GIP,Pound,350,150.0,Europe,39.0,Southern Europe,-1.0,-1,Territory of GB,Developed,6.5,27884.0,84
+GR,GRC,300.0,GR,Greece,Greece,Athens,Europe,EUR,Euro,30,150.0,Europe,39.0,Southern Europe,-1.0,-1,Independent,Developed,131940.0,11000000.0,85
+GL,GRL,304.0,GL,Greenland,Greenland,Nuuk,North America,DKK,Krone,299,19.0,Americas,21.0,Northern America,-1.0,-1,Part of DK,Developed,2166086.0,56375.0,86
+GD,GRD,308.0,GJ,Grenada,Grenada,St. George's,North America,XCD,Dollar,-472,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Independent,Developing,344.0,107818.0,87
+GP,GLP,312.0,GP,Guadeloupe,Guadeloupe,Basse-Terre,North America,EUR,Euro,590,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Part of FR,Developing,1780.0,443000.0,88
+GU,GUM,316.0,GQ,Guam,Guam,Hagatna,Oceania,USD,Dollar,-670,9.0,Oceania,57.0,Micronesia,-1.0,-1,Territory of US,Developing,549.0,159358.0,89
+GT,GTM,320.0,GT,Guatemala,Guatemala,Guatemala City,North America,GTQ,Quetzal,502,19.0,Americas,419.0,Latin America and the Caribbean,13.0,Central America,Independent,Developing,108890.0,13550440.0,90
+GG,GGY,831.0,GK,Guernsey,Guernsey,St Peter Port,Europe,GBP,Pound,-1437,150.0,Europe,154.0,Northern Europe,830.0,Channel Islands,Crown dependency of GB,Developed,78.0,65228.0,91
+GN,GIN,324.0,GV,Guinea,Guinea,Conakry,Africa,GNF,Franc,224,2.0,Africa,202.0,Sub-Saharan Africa,11.0,Western Africa,Independent,Developing,245857.0,10324025.0,92
+GW,GNB,624.0,PU,Guinea-Bissau,Guinea-Bissau,Bissau,Africa,XOF,Franc,245,2.0,Africa,202.0,Sub-Saharan Africa,11.0,Western Africa,Independent,Developing,36120.0,1565126.0,93
+GY,GUY,328.0,GY,Guyana,Guyana,Georgetown,South America,GYD,Dollar,592,19.0,Americas,419.0,Latin America and the Caribbean,5.0,South America,Independent,Developing,214970.0,748486.0,94
+HT,HTI,332.0,HA,Haiti,Haiti,Port-au-Prince,North America,HTG,Gourde,509,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Independent,Developing,27750.0,9648924.0,95
+HM,HMD,334.0,HM,Heard Island and McDonald Islands,Heard Island and McDonald Islands,-1,Antarctica,AUD,Dollar, ,9.0,Oceania,53.0,Australia and New Zealand,-1.0,-1,Territory of AU,Developed,412.0,0.0,96
+HN,HND,340.0,HO,Honduras,Honduras,Tegucigalpa,North America,HNL,Lempira,504,19.0,Americas,419.0,Latin America and the Caribbean,13.0,Central America,Independent,Developing,112090.0,7989415.0,97
+HK,HKG,344.0,HK,Hong Kong,"China, Hong Kong Special Administrative Region",Hong Kong,Asia,HKD,Dollar,852,142.0,Asia,30.0,Eastern Asia,-1.0,-1,Part of CN,Developing,1092.0,6898686.0,98
+HU,HUN,348.0,HU,Hungary,Hungary,Budapest,Europe,HUF,Forint,36,150.0,Europe,151.0,Eastern Europe,-1.0,-1,Independent,Developed,93030.0,9982000.0,99
+IS,ISL,352.0,IC,Iceland,Iceland,Reykjavik,Europe,ISK,Krona,354,150.0,Europe,154.0,Northern Europe,-1.0,-1,Independent,Developed,103000.0,308910.0,100
+IN,IND,356.0,IN,India,India,New Delhi,Asia,INR,Rupee,91,142.0,Asia,34.0,Southern Asia,-1.0,-1,Independent,Developing,3287590.0,1173108018.0,101
+ID,IDN,360.0,ID,Indonesia,Indonesia,Jakarta,Asia,IDR,Rupiah,62,142.0,Asia,35.0,South-eastern Asia,-1.0,-1,Independent,Developing,1919440.0,242968342.0,102
+IR,IRN,364.0,IR,Iran,Iran (Islamic Republic of),Tehran,Asia,IRR,Rial,98,142.0,Asia,34.0,Southern Asia,-1.0,-1,Independent,Developing,1648000.0,76923300.0,103
+IQ,IRQ,368.0,IZ,Iraq,Iraq,Baghdad,Asia,IQD,Dinar,964,142.0,Asia,145.0,Western Asia,-1.0,-1,Independent,Developing,437072.0,29671605.0,104
+IE,IRL,372.0,EI,Ireland,Ireland,Dublin,Europe,EUR,Euro,353,150.0,Europe,154.0,Northern Europe,-1.0,-1,Independent,Developed,70280.0,4622917.0,105
+IM,IMN,833.0,IM,Isle of Man,Isle of Man,Douglas,Europe,GBP,Pound,-1580,150.0,Europe,154.0,Northern Europe,-1.0,-1,Crown dependency of GB,Developed,572.0,75049.0,106
+IL,ISR,376.0,IS,Israel,Israel,Jerusalem,Asia,ILS,Shekel,972,142.0,Asia,145.0,Western Asia,-1.0,-1,Independent,Developed,20770.0,7353985.0,107
+IT,ITA,380.0,IT,Italy,Italy,Rome,Europe,EUR,Euro,39,150.0,Europe,39.0,Southern Europe,-1.0,-1,Independent,Developed,301230.0,60340328.0,108
+CI,CIV,384.0,IV,Ivory Coast,Côte d'Ivoire,Yamoussoukro,Africa,XOF,Franc,225,2.0,Africa,202.0,Sub-Saharan Africa,11.0,Western Africa,Independent,Developing,322460.0,21058798.0,109
+JM,JAM,388.0,JM,Jamaica,Jamaica,Kingston,North America,JMD,Dollar,-875,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Independent,Developing,10991.0,2847232.0,110
+JP,JPN,392.0,JA,Japan,Japan,Tokyo,Asia,JPY,Yen,81,142.0,Asia,30.0,Eastern Asia,-1.0,-1,Independent,Developed,377835.0,127288000.0,111
+JE,JEY,832.0,JE,Jersey,Jersey,Saint Helier,Europe,GBP,Pound,-1490,150.0,Europe,154.0,Northern Europe,830.0,Channel Islands,Crown dependency of GB,Developed,116.0,90812.0,112
+JO,JOR,400.0,JO,Jordan,Jordan,Amman,Asia,JOD,Dinar,962,142.0,Asia,145.0,Western Asia,-1.0,-1,Independent,Developing,92300.0,6407085.0,113
+KZ,KAZ,398.0,KZ,Kazakhstan,Kazakhstan,Astana,Asia,KZT,Tenge,7,142.0,Asia,143.0,Central Asia,-1.0,-1,Independent,Developing,2717300.0,15340000.0,114
+KE,KEN,404.0,KE,Kenya,Kenya,Nairobi,Africa,KES,Shilling,254,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Independent,Developing,582650.0,40046566.0,115
+KI,KIR,296.0,KR,Kiribati,Kiribati,Tarawa,Oceania,AUD,Dollar,686,9.0,Oceania,57.0,Micronesia,-1.0,-1,Independent,Developing,811.0,92533.0,116
+XK,XKX,0.0,KV,Kosovo,-1,Pristina,Europe,EUR,Euro,-1,150.0,Europe,39.0,Southern Europe,-1.0,-1,-1,-1,10908.0,1800000.0,117
+KW,KWT,414.0,KU,Kuwait,Kuwait,Kuwait City,Asia,KWD,Dinar,965,142.0,Asia,145.0,Western Asia,-1.0,-1,Independent,Developing,17820.0,2789132.0,118
+KG,KGZ,417.0,KG,Kyrgyzstan,Kyrgyzstan,Bishkek,Asia,KGS,Som,996,142.0,Asia,143.0,Central Asia,-1.0,-1,Independent,Developing,198500.0,5776500.0,119
+LA,LAO,418.0,LA,Laos,Lao People's Democratic Republic,Vientiane,Asia,LAK,Kip,856,142.0,Asia,35.0,South-eastern Asia,-1.0,-1,Independent,Developing,236800.0,6368162.0,120
+LV,LVA,428.0,LG,Latvia,Latvia,Riga,Europe,EUR,Euro,371,150.0,Europe,154.0,Northern Europe,-1.0,-1,Independent,Developed,64589.0,2217969.0,121
+LB,LBN,422.0,LE,Lebanon,Lebanon,Beirut,Asia,LBP,Pound,961,142.0,Asia,145.0,Western Asia,-1.0,-1,Independent,Developing,10400.0,4125247.0,122
+LS,LSO,426.0,LT,Lesotho,Lesotho,Maseru,Africa,LSL,Loti,266,2.0,Africa,202.0,Sub-Saharan Africa,18.0,Southern Africa,Independent,Developing,30355.0,1919552.0,123
+LR,LBR,430.0,LI,Liberia,Liberia,Monrovia,Africa,LRD,Dollar,231,2.0,Africa,202.0,Sub-Saharan Africa,11.0,Western Africa,Independent,Developing,111370.0,3685076.0,124
+LY,LBY,434.0,LY,Libya,Libya,Tripoli,Africa,LYD,Dinar,218,2.0,Africa,15.0,Northern Africa,-1.0,-1,Independent,Developing,1759540.0,6461454.0,125
+LI,LIE,438.0,LS,Liechtenstein,Liechtenstein,Vaduz,Europe,CHF,Franc,423,150.0,Europe,155.0,Western Europe,-1.0,-1,Independent,Developed,160.0,35000.0,126
+LT,LTU,440.0,LH,Lithuania,Lithuania,Vilnius,Europe,EUR,Euro,370,150.0,Europe,154.0,Northern Europe,-1.0,-1,Independent,Developed,65200.0,2944459.0,127
+LU,LUX,442.0,LU,Luxembourg,Luxembourg,Luxembourg,Europe,EUR,Euro,352,150.0,Europe,155.0,Western Europe,-1.0,-1,Independent,Developed,2586.0,497538.0,128
+MO,MAC,446.0,MC,Macao,"China, Macao Special Administrative Region",Macao,Asia,MOP,Pataca,853,142.0,Asia,30.0,Eastern Asia,-1.0,-1,Part of CN,Developing,254.0,449198.0,129
+MK,MKD,807.0,MK,Macedonia,The former Yugoslav Republic of Macedonia,Skopje,Europe,MKD,Denar,389,150.0,Europe,39.0,Southern Europe,-1.0,-1,Independent,Developed,25333.0,2062294.0,130
+MG,MDG,450.0,MA,Madagascar,Madagascar,Antananarivo,Africa,MGA,Ariary,261,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Independent,Developing,587040.0,21281844.0,131
+MW,MWI,454.0,MI,Malawi,Malawi,Lilongwe,Africa,MWK,Kwacha,265,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Independent,Developing,118480.0,15447500.0,132
+MY,MYS,458.0,MY,Malaysia,Malaysia,Kuala Lumpur,Asia,MYR,Ringgit,60,142.0,Asia,35.0,South-eastern Asia,-1.0,-1,Independent,Developing,329750.0,28274729.0,133
+MV,MDV,462.0,MV,Maldives,Maldives,Male,Asia,MVR,Rufiyaa,960,142.0,Asia,34.0,Southern Asia,-1.0,-1,Independent,Developing,300.0,395650.0,134
+ML,MLI,466.0,ML,Mali,Mali,Bamako,Africa,XOF,Franc,223,2.0,Africa,202.0,Sub-Saharan Africa,11.0,Western Africa,Independent,Developing,1240000.0,13796354.0,135
+MT,MLT,470.0,MT,Malta,Malta,Valletta,Europe,EUR,Euro,356,150.0,Europe,39.0,Southern Europe,-1.0,-1,Independent,Developed,316.0,403000.0,136
+MH,MHL,584.0,RM,Marshall Islands,Marshall Islands,Majuro,Oceania,USD,Dollar,692,9.0,Oceania,57.0,Micronesia,-1.0,-1,Independent,Developing,181.3,65859.0,137
+MQ,MTQ,474.0,MB,Martinique,Martinique,Fort-de-France,North America,EUR,Euro,596,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Part of FR,Developing,1100.0,432900.0,138
+MR,MRT,478.0,MR,Mauritania,Mauritania,Nouakchott,Africa,MRO,Ouguiya,222,2.0,Africa,202.0,Sub-Saharan Africa,11.0,Western Africa,Independent,Developing,1030700.0,3205060.0,139
+MU,MUS,480.0,MP,Mauritius,Mauritius,Port Louis,Africa,MUR,Rupee,230,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Independent,Developing,2040.0,1294104.0,140
+YT,MYT,175.0,MF,Mayotte,Mayotte,Mamoudzou,Africa,EUR,Euro,262,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Part of FR,Developing,374.0,159042.0,141
+MX,MEX,484.0,MX,Mexico,Mexico,Mexico City,North America,MXN,Peso,52,19.0,Americas,419.0,Latin America and the Caribbean,13.0,Central America,Independent,Developing,1972550.0,112468855.0,142
+FM,FSM,583.0,FM,Micronesia,Micronesia (Federated States of),Palikir,Oceania,USD,Dollar,691,9.0,Oceania,57.0,Micronesia,-1.0,-1,Independent,Developing,702.0,107708.0,143
+MD,MDA,498.0,MD,Moldova,Republic of Moldova,Chisinau,Europe,MDL,Leu,373,150.0,Europe,151.0,Eastern Europe,-1.0,-1,Independent,Developed,33843.0,4324000.0,144
+MC,MCO,492.0,MN,Monaco,Monaco,Monaco,Europe,EUR,Euro,377,150.0,Europe,155.0,Western Europe,-1.0,-1,Independent,Developed,1.95,32965.0,145
+MN,MNG,496.0,MG,Mongolia,Mongolia,Ulan Bator,Asia,MNT,Tugrik,976,142.0,Asia,30.0,Eastern Asia,-1.0,-1,Independent,Developing,1565000.0,3086918.0,146
+ME,MNE,499.0,MJ,Montenegro,Montenegro,Podgorica,Europe,EUR,Euro,382,150.0,Europe,39.0,Southern Europe,-1.0,-1,Independent,Developed,14026.0,666730.0,147
+MS,MSR,500.0,MH,Montserrat,Montserrat,Plymouth,North America,XCD,Dollar,-663,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Territory of GB,Developing,102.0,9341.0,148
+MA,MAR,504.0,MO,Morocco,Morocco,Rabat,Africa,MAD,Dirham,212,2.0,Africa,15.0,Northern Africa,-1.0,-1,Independent,Developing,446550.0,33848242.0,149
+MZ,MOZ,508.0,MZ,Mozambique,Mozambique,Maputo,Africa,MZN,Metical,258,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Independent,Developing,801590.0,22061451.0,150
+MM,MMR,104.0,BM,Myanmar,Myanmar,Nay Pyi Taw,Asia,MMK,Kyat,95,142.0,Asia,35.0,South-eastern Asia,-1.0,-1,Independent,Developing,678500.0,53414374.0,151
+-1,NAM,516.0,WA,Namibia,Namibia,Windhoek,Africa,NAD,Dollar,264,2.0,Africa,202.0,Sub-Saharan Africa,18.0,Southern Africa,Independent,Developing,825418.0,2128471.0,152
+NR,NRU,520.0,NR,Nauru,Nauru,Yaren,Oceania,AUD,Dollar,674,9.0,Oceania,57.0,Micronesia,-1.0,-1,Independent,Developing,21.0,10065.0,153
+NP,NPL,524.0,NP,Nepal,Nepal,Kathmandu,Asia,NPR,Rupee,977,142.0,Asia,34.0,Southern Asia,-1.0,-1,Independent,Developing,140800.0,28951852.0,154
+NL,NLD,528.0,NL,Netherlands,Netherlands,Amsterdam,Europe,EUR,Euro,31,150.0,Europe,155.0,Western Europe,-1.0,-1,Independent,Developed,41526.0,16645000.0,155
+AN,ANT,530.0,NT,Netherlands Antilles,-1,Willemstad,North America,ANG,Guilder,599,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,960.0,300000.0,156
+NC,NCL,540.0,NC,New Caledonia,New Caledonia,Noumea,Oceania,XPF,Franc,687,9.0,Oceania,54.0,Melanesia,-1.0,-1,Territory of FR,Developing,19060.0,216494.0,157
+NZ,NZL,554.0,NZ,New Zealand,New Zealand,Wellington,Oceania,NZD,Dollar,64,9.0,Oceania,53.0,Australia and New Zealand,-1.0,-1,Independent,Developed,268680.0,4252277.0,158
+NI,NIC,558.0,NU,Nicaragua,Nicaragua,Managua,North America,NIO,Cordoba,505,19.0,Americas,419.0,Latin America and the Caribbean,13.0,Central America,Independent,Developing,129494.0,5995928.0,159
+NE,NER,562.0,NG,Niger,Niger,Niamey,Africa,XOF,Franc,227,2.0,Africa,202.0,Sub-Saharan Africa,11.0,Western Africa,Independent,Developing,1267000.0,15878271.0,160
+NG,NGA,566.0,NI,Nigeria,Nigeria,Abuja,Africa,NGN,Naira,234,2.0,Africa,202.0,Sub-Saharan Africa,11.0,Western Africa,Independent,Developing,923768.0,154000000.0,161
+NU,NIU,570.0,NE,Niue,Niue,Alofi,Oceania,NZD,Dollar,683,9.0,Oceania,61.0,Polynesia,-1.0,-1,Associated with NZ,Developing,260.0,2166.0,162
+NF,NFK,574.0,NF,Norfolk Island,Norfolk Island,Kingston,Oceania,AUD,Dollar,672,9.0,Oceania,53.0,Australia and New Zealand,-1.0,-1,Territory of AU,Developed,34.6,1828.0,163
+KP,PRK,408.0,KN,North Korea,Democratic People's Republic of Korea,Pyongyang,Asia,KPW,Won,850,142.0,Asia,30.0,Eastern Asia,-1.0,-1,Independent,Developing,120540.0,22912177.0,164
+MP,MNP,580.0,CQ,Northern Mariana Islands,Northern Mariana Islands,Saipan,Oceania,USD,Dollar,-669,9.0,Oceania,57.0,Micronesia,-1.0,-1,Commonwealth of US,Developing,477.0,53883.0,165
+NO,NOR,578.0,NO,Norway,Norway,Oslo,Europe,NOK,Krone,47,150.0,Europe,154.0,Northern Europe,-1.0,-1,Independent,Developed,324220.0,5009150.0,166
+OM,OMN,512.0,MU,Oman,Oman,Muscat,Asia,OMR,Rial,968,142.0,Asia,145.0,Western Asia,-1.0,-1,Independent,Developing,212460.0,2967717.0,167
+PK,PAK,586.0,PK,Pakistan,Pakistan,Islamabad,Asia,PKR,Rupee,92,142.0,Asia,34.0,Southern Asia,-1.0,-1,Independent,Developing,803940.0,184404791.0,168
+PW,PLW,585.0,PS,Palau,Palau,Melekeok,Oceania,USD,Dollar,680,9.0,Oceania,57.0,Micronesia,-1.0,-1,Independent,Developing,458.0,19907.0,169
+PS,PSE,275.0,WE,Palestinian Territory,State of Palestine,East Jerusalem,Asia,ILS,Shekel,970,142.0,Asia,145.0,Western Asia,-1.0,-1,In contention,Developing,5970.0,3800000.0,170
+PA,PAN,591.0,PM,Panama,Panama,Panama City,North America,PAB,Balboa,507,19.0,Americas,419.0,Latin America and the Caribbean,13.0,Central America,Independent,Developing,78200.0,3410676.0,171
+PG,PNG,598.0,PP,Papua New Guinea,Papua New Guinea,Port Moresby,Oceania,PGK,Kina,675,9.0,Oceania,54.0,Melanesia,-1.0,-1,Independent,Developing,462840.0,6064515.0,172
+PY,PRY,600.0,PA,Paraguay,Paraguay,Asuncion,South America,PYG,Guarani,595,19.0,Americas,419.0,Latin America and the Caribbean,5.0,South America,Independent,Developing,406750.0,6375830.0,173
+PE,PER,604.0,PE,Peru,Peru,Lima,South America,PEN,Sol,51,19.0,Americas,419.0,Latin America and the Caribbean,5.0,South America,Independent,Developing,1285220.0,29907003.0,174
+PH,PHL,608.0,RP,Philippines,Philippines,Manila,Asia,PHP,Peso,63,142.0,Asia,35.0,South-eastern Asia,-1.0,-1,Independent,Developing,300000.0,99900177.0,175
+PN,PCN,612.0,PC,Pitcairn,Pitcairn,Adamstown,Oceania,NZD,Dollar,870,9.0,Oceania,61.0,Polynesia,-1.0,-1,Territory of GB,Developing,47.0,46.0,176
+PL,POL,616.0,PL,Poland,Poland,Warsaw,Europe,PLN,Zloty,48,150.0,Europe,151.0,Eastern Europe,-1.0,-1,Independent,Developed,312685.0,38500000.0,177
+PT,PRT,620.0,PO,Portugal,Portugal,Lisbon,Europe,EUR,Euro,351,150.0,Europe,39.0,Southern Europe,-1.0,-1,Independent,Developed,92391.0,10676000.0,178
+PR,PRI,630.0,RQ,Puerto Rico,Puerto Rico,San Juan,North America,USD,Dollar,+1-787 and 1-939,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Commonwealth of US,Developing,9104.0,3916632.0,179
+QA,QAT,634.0,QA,Qatar,Qatar,Doha,Asia,QAR,Rial,974,142.0,Asia,145.0,Western Asia,-1.0,-1,Independent,Developing,11437.0,840926.0,180
+CG,COG,178.0,CF,Republic of the Congo,Congo,Brazzaville,Africa,XAF,Franc,242,2.0,Africa,202.0,Sub-Saharan Africa,17.0,Middle Africa,Independent,Developing,342000.0,3039126.0,181
+RE,REU,638.0,RE,Reunion,Réunion,Saint-Denis,Africa,EUR,Euro,262,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Part of FR,Developing,2517.0,776948.0,182
+RO,ROU,642.0,RO,Romania,Romania,Bucharest,Europe,RON,Leu,40,150.0,Europe,151.0,Eastern Europe,-1.0,-1,Independent,Developed,237500.0,21959278.0,183
+RU,RUS,643.0,RS,Russia,Russian Federation,Moscow,Europe,RUB,Ruble,7,150.0,Europe,151.0,Eastern Europe,-1.0,-1,Independent,Developed,17100000.0,140702000.0,184
+RW,RWA,646.0,RW,Rwanda,Rwanda,Kigali,Africa,RWF,Franc,250,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Independent,Developing,26338.0,11055976.0,185
+BL,BLM,652.0,TB,Saint Barthelemy,Saint Barthélemy,Gustavia,North America,EUR,Euro,590,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Part of FR,Developing,21.0,8450.0,186
+SH,SHN,654.0,SH,Saint Helena,Saint Helena,Jamestown,Africa,SHP,Pound,290,2.0,Africa,202.0,Sub-Saharan Africa,11.0,Western Africa,Territory of GB,Developing,410.0,7460.0,187
+KN,KNA,659.0,SC,Saint Kitts and Nevis,Saint Kitts and Nevis,Basseterre,North America,XCD,Dollar,-868,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Independent,Developing,261.0,51134.0,188
+LC,LCA,662.0,ST,Saint Lucia,Saint Lucia,Castries,North America,XCD,Dollar,-757,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Independent,Developing,616.0,160922.0,189
+MF,MAF,663.0,RN,Saint Martin,Saint Martin (French Part),Marigot,North America,EUR,Euro,590,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Part of FR,Developing,53.0,35925.0,190
+PM,SPM,666.0,SB,Saint Pierre and Miquelon,Saint Pierre and Miquelon,Saint-Pierre,North America,EUR,Euro,508,19.0,Americas,21.0,Northern America,-1.0,-1,Part of FR,Developed,242.0,7012.0,191
+VC,VCT,670.0,VC,Saint Vincent and the Grenadines,Saint Vincent and the Grenadines,Kingstown,North America,XCD,Dollar,-783,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Independent,Developing,389.0,104217.0,192
+WS,WSM,882.0,WS,Samoa,Samoa,Apia,Oceania,WST,Tala,685,9.0,Oceania,61.0,Polynesia,-1.0,-1,Independent,Developing,2944.0,192001.0,193
+SM,SMR,674.0,SM,San Marino,San Marino,San Marino,Europe,EUR,Euro,378,150.0,Europe,39.0,Southern Europe,-1.0,-1,Independent,Developed,61.2,31477.0,194
+ST,STP,678.0,TP,Sao Tome and Principe,Sao Tome and Principe,Sao Tome,Africa,STD,Dobra,239,2.0,Africa,202.0,Sub-Saharan Africa,17.0,Middle Africa,Independent,Developing,1001.0,175808.0,195
+SA,SAU,682.0,SA,Saudi Arabia,Saudi Arabia,Riyadh,Asia,SAR,Rial,966,142.0,Asia,145.0,Western Asia,-1.0,-1,Independent,Developing,1960582.0,25731776.0,196
+SN,SEN,686.0,SG,Senegal,Senegal,Dakar,Africa,XOF,Franc,221,2.0,Africa,202.0,Sub-Saharan Africa,11.0,Western Africa,Independent,Developing,196190.0,12323252.0,197
+RS,SRB,688.0,RI,Serbia,Serbia,Belgrade,Europe,RSD,Dinar,381,150.0,Europe,39.0,Southern Europe,-1.0,-1,Independent,Developed,88361.0,7344847.0,198
+CS,SCG,891.0,YI,Serbia and Montenegro,-1,Belgrade,Europe,RSD,Dinar,381,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,102350.0,10829175.0,199
+SC,SYC,690.0,SE,Seychelles,Seychelles,Victoria,Africa,SCR,Rupee,248,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Independent,Developing,455.0,88340.0,200
+SL,SLE,694.0,SL,Sierra Leone,Sierra Leone,Freetown,Africa,SLL,Leone,232,2.0,Africa,202.0,Sub-Saharan Africa,11.0,Western Africa,Independent,Developing,71740.0,5245695.0,201
+SG,SGP,702.0,SN,Singapore,Singapore,Singapore,Asia,SGD,Dollar,65,142.0,Asia,35.0,South-eastern Asia,-1.0,-1,Independent,Developing,692.7,4701069.0,202
+SX,SXM,534.0,NN,Sint Maarten,Sint Maarten (Dutch part),Philipsburg,North America,ANG,Guilder,599,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Part of NL,Developing,21.0,37429.0,203
+SK,SVK,703.0,LO,Slovakia,Slovakia,Bratislava,Europe,EUR,Euro,421,150.0,Europe,151.0,Eastern Europe,-1.0,-1,Independent,Developed,48845.0,5455000.0,204
+SI,SVN,705.0,SI,Slovenia,Slovenia,Ljubljana,Europe,EUR,Euro,386,150.0,Europe,39.0,Southern Europe,-1.0,-1,Independent,Developed,20273.0,2007000.0,205
+SB,SLB,90.0,BP,Solomon Islands,Solomon Islands,Honiara,Oceania,SBD,Dollar,677,9.0,Oceania,54.0,Melanesia,-1.0,-1,Independent,Developing,28450.0,559198.0,206
+SO,SOM,706.0,SO,Somalia,Somalia,Mogadishu,Africa,SOS,Shilling,252,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Independent,Developing,637657.0,10112453.0,207
+ZA,ZAF,710.0,SF,South Africa,South Africa,Pretoria,Africa,ZAR,Rand,27,2.0,Africa,202.0,Sub-Saharan Africa,18.0,Southern Africa,Independent,Developing,1219912.0,49000000.0,208
+GS,SGS,239.0,SX,South Georgia and the South Sandwich Islands,South Georgia and the South Sandwich Islands,Grytviken,Antarctica,GBP,Pound,-1,19.0,Americas,419.0,Latin America and the Caribbean,5.0,South America,Territory of GB,Developing,3903.0,30.0,209
+KR,KOR,410.0,KS,South Korea,Republic of Korea,Seoul,Asia,KRW,Won,82,142.0,Asia,30.0,Eastern Asia,-1.0,-1,Independent,Developing,98480.0,48422644.0,210
+SS,SSD,728.0,OD,South Sudan,South Sudan,Juba,Africa,SSP,Pound,211,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Independent,Developing,644329.0,8260490.0,211
+ES,ESP,724.0,SP,Spain,Spain,Madrid,Europe,EUR,Euro,34,150.0,Europe,39.0,Southern Europe,-1.0,-1,Independent,Developed,504782.0,46505963.0,212
+LK,LKA,144.0,CE,Sri Lanka,Sri Lanka,Colombo,Asia,LKR,Rupee,94,142.0,Asia,34.0,Southern Asia,-1.0,-1,Independent,Developing,65610.0,21513990.0,213
+SD,SDN,729.0,SU,Sudan,Sudan,Khartoum,Africa,SDG,Pound,249,2.0,Africa,15.0,Northern Africa,-1.0,-1,Independent,Developing,1861484.0,35000000.0,214
+SR,SUR,740.0,NS,Suriname,Suriname,Paramaribo,South America,SRD,Dollar,597,19.0,Americas,419.0,Latin America and the Caribbean,5.0,South America,Independent,Developing,163270.0,492829.0,215
+SJ,SJM,744.0,SV,Svalbard and Jan Mayen,Svalbard and Jan Mayen Islands,Longyearbyen,Europe,NOK,Krone,47,150.0,Europe,154.0,Northern Europe,-1.0,-1,Territory of NO,Developed,62049.0,2550.0,216
+SZ,SWZ,748.0,WZ,Swaziland,Eswatini,Mbabane,Africa,SZL,Lilangeni,268,2.0,Africa,202.0,Sub-Saharan Africa,18.0,Southern Africa,Independent,Developing,17363.0,1354051.0,217
+SE,SWE,752.0,SW,Sweden,Sweden,Stockholm,Europe,SEK,Krona,46,150.0,Europe,154.0,Northern Europe,-1.0,-1,Independent,Developed,449964.0,9828655.0,218
+CH,CHE,756.0,SZ,Switzerland,Switzerland,Bern,Europe,CHF,Franc,41,150.0,Europe,155.0,Western Europe,-1.0,-1,Independent,Developed,41290.0,7581000.0,219
+SY,SYR,760.0,SY,Syria,Syrian Arab Republic,Damascus,Asia,SYP,Pound,963,142.0,Asia,145.0,Western Asia,-1.0,-1,Independent,Developing,185180.0,22198110.0,220
+TW,TWN,158.0,TW,Taiwan,Republic of China,Taipei,Asia,TWD,Dollar,886,142.0,Asia,30.0,Eastern Asia,-1.0,-1,Independent,-1,35980.0,22894384.0,221
+TJ,TJK,762.0,TI,Tajikistan,Tajikistan,Dushanbe,Asia,TJS,Somoni,992,142.0,Asia,143.0,Central Asia,-1.0,-1,Independent,Developing,143100.0,7487489.0,222
+TZ,TZA,834.0,TZ,Tanzania,United Republic of Tanzania,Dodoma,Africa,TZS,Shilling,255,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Independent,Developing,945087.0,41892895.0,223
+TH,THA,764.0,TH,Thailand,Thailand,Bangkok,Asia,THB,Baht,66,142.0,Asia,35.0,South-eastern Asia,-1.0,-1,Independent,Developing,514000.0,67089500.0,224
+TL,TLS,626.0,TT,Timor Leste,Timor-Leste,Dili,Oceania,USD,Dollar,670,142.0,Asia,35.0,South-eastern Asia,-1.0,-1,Independent,Developing,15007.0,1154625.0,225
+TG,TGO,768.0,TO,Togo,Togo,Lome,Africa,XOF,Franc,228,2.0,Africa,202.0,Sub-Saharan Africa,11.0,Western Africa,Independent,Developing,56785.0,6587239.0,226
+TK,TKL,772.0,TL,Tokelau,Tokelau,-1,Oceania,NZD,Dollar,690,9.0,Oceania,61.0,Polynesia,-1.0,-1,Territory of NZ,Developing,10.0,1466.0,227
+TO,TON,776.0,TN,Tonga,Tonga,Nuku'alofa,Oceania,TOP,Pa'anga,676,9.0,Oceania,61.0,Polynesia,-1.0,-1,Independent,Developing,748.0,122580.0,228
+TT,TTO,780.0,TD,Trinidad and Tobago,Trinidad and Tobago,Port of Spain,North America,TTD,Dollar,-867,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Independent,Developing,5128.0,1328019.0,229
+TN,TUN,788.0,TS,Tunisia,Tunisia,Tunis,Africa,TND,Dinar,216,2.0,Africa,15.0,Northern Africa,-1.0,-1,Independent,Developing,163610.0,10589025.0,230
+TR,TUR,792.0,TU,Turkey,Turkey,Ankara,Asia,TRY,Lira,90,142.0,Asia,145.0,Western Asia,-1.0,-1,Independent,Developing,780580.0,77804122.0,231
+TM,TKM,795.0,TX,Turkmenistan,Turkmenistan,Ashgabat,Asia,TMT,Manat,993,142.0,Asia,143.0,Central Asia,-1.0,-1,Independent,Developing,488100.0,4940916.0,232
+TC,TCA,796.0,TK,Turks and Caicos Islands,Turks and Caicos Islands,Cockburn Town,North America,USD,Dollar,-648,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Territory of GB,Developing,430.0,20556.0,233
+TV,TUV,798.0,TV,Tuvalu,Tuvalu,Funafuti,Oceania,AUD,Dollar,688,9.0,Oceania,61.0,Polynesia,-1.0,-1,Independent,Developing,26.0,10472.0,234
+VI,VIR,850.0,VQ,U.S. Virgin Islands,United States Virgin Islands,Charlotte Amalie,North America,USD,Dollar,-339,19.0,Americas,419.0,Latin America and the Caribbean,29.0,Caribbean,Territory of US,Developing,352.0,108708.0,235
+UG,UGA,800.0,UG,Uganda,Uganda,Kampala,Africa,UGX,Shilling,256,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Independent,Developing,236040.0,33398682.0,236
+UA,UKR,804.0,UP,Ukraine,Ukraine,Kyiv,Europe,UAH,Hryvnia,380,150.0,Europe,151.0,Eastern Europe,-1.0,-1,Independent,Developed,603700.0,45415596.0,237
+AE,ARE,784.0,AE,United Arab Emirates,United Arab Emirates,Abu Dhabi,Asia,AED,Dirham,971,142.0,Asia,145.0,Western Asia,-1.0,-1,Independent,Developing,82880.0,4975593.0,238
+GB,GBR,826.0,UK,United Kingdom,United Kingdom of Great Britain and Northern Ireland,London,Europe,GBP,Pound,44,150.0,Europe,154.0,Northern Europe,-1.0,-1,Independent,Developed,244820.0,62348447.0,239
+US,USA,840.0,US,United States,United States of America,Washington,North America,USD,Dollar,1,19.0,Americas,21.0,Northern America,-1.0,-1,Independent,Developed,9629091.0,310232863.0,240
+UM,UMI,581.0,-1,United States Minor Outlying Islands,United States Minor Outlying Islands,-1,Oceania,USD,Dollar ,1,9.0,Oceania,57.0,Micronesia,-1.0,-1,Territories of US,Developing,0.0,0.0,241
+UY,URY,858.0,UY,Uruguay,Uruguay,Montevideo,South America,UYU,Peso,598,19.0,Americas,419.0,Latin America and the Caribbean,5.0,South America,Independent,Developing,176220.0,3477000.0,242
+UZ,UZB,860.0,UZ,Uzbekistan,Uzbekistan,Tashkent,Asia,UZS,Som,998,142.0,Asia,143.0,Central Asia,-1.0,-1,Independent,Developing,447400.0,27865738.0,243
+VU,VUT,548.0,NH,Vanuatu,Vanuatu,Port Vila,Oceania,VUV,Vatu,678,9.0,Oceania,54.0,Melanesia,-1.0,-1,Independent,Developing,12200.0,221552.0,244
+VA,VAT,336.0,VT,Vatican,Holy See,Vatican City,Europe,EUR,Euro,379,150.0,Europe,39.0,Southern Europe,-1.0,-1,Independent,Developed,0.44,921.0,245
+VE,VEN,862.0,VE,Venezuela,Venezuela (Bolivarian Republic of),Caracas,South America,VES,Bolivar Soberano,58,19.0,Americas,419.0,Latin America and the Caribbean,5.0,South America,Independent,Developing,912050.0,27223228.0,246
+VN,VNM,704.0,VM,Vietnam,Viet Nam,Hanoi,Asia,VND,Dong,84,142.0,Asia,35.0,South-eastern Asia,-1.0,-1,Independent,Developing,329560.0,89571130.0,247
+WF,WLF,876.0,WF,Wallis and Futuna,Wallis and Futuna Islands,Mata Utu,Oceania,XPF,Franc,681,9.0,Oceania,61.0,Polynesia,-1.0,-1,Territory of FR,Developing,274.0,16025.0,248
+EH,ESH,732.0,WI,Western Sahara,Western Sahara,El-Aaiun,Africa,MAD,Dirham,212,2.0,Africa,15.0,Northern Africa,-1.0,-1,In contention,Developing,266000.0,273008.0,249
+YE,YEM,887.0,YM,Yemen,Yemen,Sanaa,Asia,YER,Rial,967,142.0,Asia,145.0,Western Asia,-1.0,-1,Independent,Developing,527970.0,23495361.0,250
+ZM,ZMB,894.0,ZA,Zambia,Zambia,Lusaka,Africa,ZMW,Kwacha,260,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Independent,Developing,752614.0,13460305.0,251
+ZW,ZWE,716.0,ZI,Zimbabwe,Zimbabwe,Harare,Africa,ZWL,Dollar,263,2.0,Africa,202.0,Sub-Saharan Africa,14.0,Eastern Africa,Independent,Developing,390580.0,13061000.0,252
+-1,-1,-1.0,-1,São Tomé and Príncipe,São Tomé and Príncipe,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,253
+-1,-1,-1.0,-1,Găgăuzia,Găgăuzia,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,254
+-1,-1,-1.0,-1,Elba Island,Elba Island,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,255
+-1,-1,-1.0,-1,North Macedonia,North Macedonia,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,256
+-1,-1,-1.0,-1,Yoruba Nation,Yoruba Nation,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,257
+-1,-1,-1.0,-1,Tamil Eelam,Tamil Eelam,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,258
+-1,-1,-1.0,-1,Arameans Suryoye,Arameans Suryoye,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,259
+-1,-1,-1.0,-1,Mapuche,Mapuche,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,260
+-1,-1,-1.0,-1,Bonaire,Bonaire,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,261
+-1,-1,-1.0,-1,North Vietnam,North Vietnam,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,262
+-1,-1,-1.0,-1,Canary Islands,Canary Islands,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,263
+-1,-1,-1.0,-1,Silesia,Silesia,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,264
+-1,-1,-1.0,-1,Palestine,Palestine,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,265
+-1,-1,-1.0,-1,Székely Land,Székely Land,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,266
+-1,-1,-1.0,-1,Western Isles,Western Isles,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,267
+-1,-1,-1.0,-1,South Ossetia,South Ossetia,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,268
+-1,-1,-1.0,-1,Congo,Congo,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,269
+-1,-1,-1.0,-1,Saint Barthélemy,Saint Barthélemy,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,270
+-1,-1,-1.0,-1,Zanzibar,Zanzibar,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,271
+-1,-1,-1.0,-1,Gozo,Gozo,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,272
+-1,-1,-1.0,-1,Ynys Môn,Ynys Môn,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,273
+-1,-1,-1.0,-1,Kernow,Kernow,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,274
+-1,-1,-1.0,-1,Somaliland,Somaliland,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,275
+-1,-1,-1.0,-1,Seborga,Seborga,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,276
+-1,-1,-1.0,-1,Orkney,Orkney,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,277
+-1,-1,-1.0,-1,Rhodes,Rhodes,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,278
+-1,-1,-1.0,-1,Sark,Sark,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,279
+-1,-1,-1.0,-1,Corsica,Corsica,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,280
+-1,-1,-1.0,-1,Wales,Wales,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,281
+-1,-1,-1.0,-1,Chameria,Chameria,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,282
+-1,-1,-1.0,-1,United States Virgin Islands,United States Virgin Islands,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,283
+-1,-1,-1.0,-1,Basque Country,Basque Country,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,284
+-1,-1,-1.0,-1,Crimea,Crimea,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,285
+-1,-1,-1.0,-1,Chagos Islands,Chagos Islands,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,286
+-1,-1,-1.0,-1,Panjab,Panjab,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,287
+-1,-1,-1.0,-1,Romani people,Romani people,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,288
+-1,-1,-1.0,-1,Cascadia,Cascadia,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,289
+-1,-1,-1.0,-1,Manchukuo,Manchukuo,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,290
+-1,-1,-1.0,-1,Eswatini,Eswatini,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,291
+-1,-1,-1.0,-1,Yemen DPR,Yemen DPR,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,292
+-1,-1,-1.0,-1,Scotland,Scotland,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,293
+-1,-1,-1.0,-1,Sápmi,Sápmi,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,294
+-1,-1,-1.0,-1,Two Sicilies,Two Sicilies,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,295
+-1,-1,-1.0,-1,Macau,Macau,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,296
+-1,-1,-1.0,-1,Provence,Provence,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,297
+-1,-1,-1.0,-1,England,England,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,298
+-1,-1,-1.0,-1,Ticino,Ticino,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,299
+-1,-1,-1.0,-1,Brittany,Brittany,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,300
+-1,-1,-1.0,-1,Saugeais,Saugeais,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,301
+-1,-1,-1.0,-1,Timor-Leste,Timor-Leste,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,302
+-1,-1,-1.0,-1,Artsakh,Artsakh,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,303
+-1,-1,-1.0,-1,Northern Cyprus,Northern Cyprus,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,304
+-1,-1,-1.0,-1,Parishes of Jersey,Parishes of Jersey,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,305
+-1,-1,-1.0,-1,Occitania,Occitania,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,306
+-1,-1,-1.0,-1,Shetland,Shetland,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,307
+-1,-1,-1.0,-1,Andalusia,Andalusia,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,308
+-1,-1,-1.0,-1,Menorca,Menorca,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,309
+-1,-1,-1.0,-1,Wallis Islands and Futuna,Wallis Islands and Futuna,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,310
+-1,-1,-1.0,-1,Isle of Wight,Isle of Wight,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,311
+-1,-1,-1.0,-1,Kárpátalja,Kárpátalja,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,312
+-1,-1,-1.0,-1,Yugoslavia,Yugoslavia,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,313
+-1,-1,-1.0,-1,Curaçao,Curaçao,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,314
+-1,-1,-1.0,-1,Surrey,Surrey,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,315
+-1,-1,-1.0,-1,Yorkshire,Yorkshire,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,316
+-1,-1,-1.0,-1,Vietnam Republic,Vietnam Republic,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,317
+-1,-1,-1.0,-1,Abkhazia,Abkhazia,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,318
+-1,-1,-1.0,-1,Franconia,Franconia,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,319
+-1,-1,-1.0,-1,Madrid,Madrid,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,320
+-1,-1,-1.0,-1,Sealand,Sealand,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,321
+-1,-1,-1.0,-1,Alderney,Alderney,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,322
+-1,-1,-1.0,-1,Galicia,Galicia,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,323
+-1,-1,-1.0,-1,West Papua,West Papua,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,324
+-1,-1,-1.0,-1,Donetsk PR,Donetsk PR,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,325
+-1,-1,-1.0,-1,Darfur,Darfur,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,326
+-1,-1,-1.0,-1,Ambazonia,Ambazonia,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,327
+-1,-1,-1.0,-1,Gotland,Gotland,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,328
+-1,-1,-1.0,-1,Northern Ireland,Northern Ireland,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,329
+-1,-1,-1.0,-1,Tibet,Tibet,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,330
+-1,-1,-1.0,-1,Kabylia,Kabylia,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,331
+-1,-1,-1.0,-1,Czechoslovakia,Czechoslovakia,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,332
+-1,-1,-1.0,-1,Catalonia,Catalonia,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,333
+-1,-1,-1.0,-1,Barawa,Barawa,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,334
+-1,-1,-1.0,-1,Tahiti,Tahiti,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,335
+-1,-1,-1.0,-1,Ryūkyū,Ryūkyū,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,336
+-1,-1,-1.0,-1,Luhansk PR,Luhansk PR,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,337
+-1,-1,-1.0,-1,Republic of St. Pauli,Republic of St. Pauli,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,338
+-1,-1,-1.0,-1,Hmong,Hmong,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,339
+-1,-1,-1.0,-1,Réunion,Réunion,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,340
+-1,-1,-1.0,-1,Délvidék,Délvidék,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,341
+-1,-1,-1.0,-1,Frøya,Frøya,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,342
+-1,-1,-1.0,-1,Saare County,Saare County,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,343
+-1,-1,-1.0,-1,Felvidék,Felvidék,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,344
+-1,-1,-1.0,-1,Asturias,Asturias,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,345
+-1,-1,-1.0,-1,Western Australia,Western Australia,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,346
+-1,-1,-1.0,-1,Matabeleland,Matabeleland,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,347
+-1,-1,-1.0,-1,Biafra,Biafra,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,348
+-1,-1,-1.0,-1,Chechnya,Chechnya,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,349
+-1,-1,-1.0,-1,County of Nice,County of Nice,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,350
+-1,-1,-1.0,-1,South Yemen,South Yemen,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,351
+-1,-1,-1.0,-1,Aymara,Aymara,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,352
+-1,-1,-1.0,-1,German DR,German DR,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,353
+-1,-1,-1.0,-1,Padania,Padania,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,354
+-1,-1,-1.0,-1,Cilento,Cilento,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,355
+-1,-1,-1.0,-1,Saarland,Saarland,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,356
+-1,-1,-1.0,-1,United Koreans in Japan,United Koreans in Japan,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,357
+-1,-1,-1.0,-1,Raetia,Raetia,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,358
+-1,-1,-1.0,-1,Ellan Vannin,Ellan Vannin,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,359
+-1,-1,-1.0,-1,Central Spain,Central Spain,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,360
+-1,-1,-1.0,-1,Western Armenia,Western Armenia,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,361
+-1,-1,-1.0,-1,Iraqi Kurdistan,Iraqi Kurdistan,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,362
+-1,-1,-1.0,-1,Maule Sur,Maule Sur,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,363
+-1,-1,-1.0,-1,Hitra,Hitra,-1,-1,-1,-1,-1,-1.0,-1,-1.0,-1,-1.0,-1,-1,-1,-1.0,-1.0,364
