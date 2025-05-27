@@ -31,11 +31,12 @@ Melina Tokka
    mysql -u username -p
    source files/create_tables.sql
    source files/load.sql
-5 Set up environment variables:
+      
+5. Set up environment variables:
    Edit this file with your MySQL configuration:
    ```bash
- src/main/resources/application.properties
+    src/main/resources/application.properties
 
-5. Start the application:
+6. Start the application:
       ```bash
    ./mvnw spring-boot:run
