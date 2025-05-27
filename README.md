@@ -29,8 +29,8 @@ Melina Tokka
       ```bash
       
    mysql -u username -p
-   source files/create_tables.sql
-   source files/load.sql
+   source files/create_tables.sql;
+   source files/load.sql;
       
 5. Set up environment variables:
    Edit this file with your MySQL configuration:
